@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/13 22:38:00 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/13 23:17:48 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ GREEN='\033[1;32m'
 RED='\033[0;31m'
 BLANK='\033[0m'
 YELLOW='\033[0;33m'
-# cp ../minishell .
+cp ../minishell .
 
 # ECHO PART
 correct=0

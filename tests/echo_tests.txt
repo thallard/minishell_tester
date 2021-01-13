@@ -1,4 +1,3 @@
-Echo part without -n flag
 echo
 echo "bonjour"
 echo bonjour
@@ -22,6 +21,7 @@ echo " $USER  "'$PWD'
 echo $USER=4
 echo $USER=thallard
 echo $USER
+echo $USER213
 echo $USER$12USER$USER=4$USER12
 echo "$USER=12$USER"
 echo "$9USER" "'$USER=12$SOMETHING'"
