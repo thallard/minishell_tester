@@ -1,0 +1,30 @@
+Echo part without -n flag
+echo
+echo "bonjour"
+echo bonjour
+echo 'bonjour'
+echo $USER
+echo "$USER"
+echo "'$USER'"
+echo " '$USER' "
+echo text"$USER"
+echo text"'$USER'" ' $USER '
+echo "text"   "$USER"    "$USER"
+echo '              $USER          '
+echo               text "$USER"            "$USER"text
+echo text"$USER"test
+echo '$USER' "$USER" "text \' text"
+echo '$USER'
+echo $USER " "
+echo "$USER""Users/$USER/file""'$USER'"'$USER'
+echo "$USER$USER$USER"
+echo " $USER  "'$PWD'
+echo $USER=4
+echo $USER=thallard
+echo $USER
+echo $USER$12USER$USER=4$USER12
+echo "$USER=12$USER"
+echo "$9USER" "'$USER=12$SOMETHING'"
+echo $PWD/file
+echo "$PWD/file"
+echo "text" "text$USER" ... "$USER"
