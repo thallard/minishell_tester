@@ -1,0 +1,9 @@
+export TEST ; env | grep "TEST" ; unset TEST
+export TEST= ; env | grep "TEST" ; unset TEST
+export TEST="" ; env | grep "TEST" ; unset TEST
+export TEST='' ; env | grep "TEST" ; unset TEST
+export TEST=100 ; env | grep "TEST" ; unset TEST
+export TEST="100" ; env | grep "TEST" ; unset TEST
+export TEST='"$USER"' ; env | grep "TEST" ; unset TEST
+export TEST="$USER" ; env | grep "TEST" ; unset TEST
+export TEST="$USER$USER" ; env | grep "TEST" ; unset TEST

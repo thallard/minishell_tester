@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/13 23:17:48 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/14 17:27:09 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ RED='\033[0;31m'
 BLANK='\033[0m'
 YELLOW='\033[0;33m'
 cp ../minishell .
+make all -C ..
 
 # ECHO PART
 correct=0
@@ -35,7 +36,7 @@ cat tests/echo_tests.txt | while read line
                 fi
             else
                 if [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
-                    printf "${RED}$i: [$line]\nbash: [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED} | minishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
+                    printf (${RED}$i: [$line]\nbash: [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
                 else
                     printf "${RED}$i: [$line]\nbash: [$BASH_RESULT][$BASH_EXIT] | minishell: [$MINISHELL_RESULT][$MINISHELL_EXIT]\n"
                 fi
