@@ -1,11 +1,30 @@
+<<<<<<< HEAD
+=======
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    test.sh                                            :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
+#    Updated: 2021/01/15 14:04:20 by thallard         ###   ########lyon.fr    #
+#                                                                              #
+# **************************************************************************** #
+>>>>>>> 784a374a728288fe024cd5c28d94407811fc6933
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 BLANK='\033[0m'
 YELLOW='\033[0;33m'
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 784a374a728288fe024cd5c28d94407811fc6933
 
+make all -C ..
+cp ../minishell .
 # Variables
 i=1
 FILE_TO_READ=
@@ -41,7 +60,7 @@ cat $FILE_TO_READ | while read line
         if [ "$1" == "--diff" ]; then
             if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
                     printf "${GREEN}$i: $line\n"
-                    echo $line >> tmp/file
+                    echo $line >> tmp
             else
                 if [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
                     printf "${RED}$i: [$line]\nbash: [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
@@ -52,19 +71,17 @@ cat $FILE_TO_READ | while read line
         else
             if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
                 printf "${GREEN}$i: [$line]\n"
-                echo $line >> tmp/file
+                echo $line >> tmp
             else
                 printf "${RED}$i: [$line]\n"
             fi
         fi
         i=$((i + 1))
     done
-
 if [ "$1" == "echo" ] || [ "$2" == "echo" ]; then
-    printf "\n${GREEN}Built-in echo result : $(cat tmp/file | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
-    rm -rf tmp/file
+    printf "\n${GREEN}Built-in echo result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
+    rm -rf tmp
 elif [ "$2" == "export" ]; then
-    printf "\n${GREEN}Built-in export result : $(cat tmp/file | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
-    rm -rf tmp/file
+    printf "\n${GREEN}Built-in export result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
+    rm -rf tmp
 fi
-
