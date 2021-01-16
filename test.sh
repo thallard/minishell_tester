@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/16 15:21:55 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/16 15:28:28 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,9 +73,9 @@ if [ "$RUN" == "1" ]; then
 						echo $line >> tmp
 				else
 					if [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
-						printf "${RED}$i: [$line]\nbash: [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
+						printf "${RED}$i:      [$line]\nbash     : [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
 					else
-						printf "${RED}$i: [$line]\nbash: [$BASH_RESULT][$BASH_EXIT] | minishell: [$MINISHELL_RESULT][$MINISHELL_EXIT]\n"
+						printf "${RED}$i:      [$line]\nbash     : [$BASH_RESULT][$BASH_EXIT]\nminishell: [$MINISHELL_RESULT][$MINISHELL_EXIT]\n"
 					fi
 				fi
 			else
@@ -87,6 +87,7 @@ if [ "$RUN" == "1" ]; then
 				fi
 			fi
 			i=$((i + 1))
+			sleep 0.1
 		done
 	if [ "$1" == "echo" ] || [ "$2" == "echo" ]; then
 		printf "\n${GREEN}Built-in echo result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
