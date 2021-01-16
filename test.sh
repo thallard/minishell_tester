@@ -1,24 +1,14 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    test.sh                                            :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/14 23:08:07 by thallard         ###   ########lyon.fr    #
-#                                                                              #
-# **************************************************************************** #
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 BLANK='\033[0m'
 YELLOW='\033[0;33m'
-cp ../minishell .
-make all -C ..
+
+
 
 # Variables
 i=1
+FILE_TO_READ=
 
 # Check if 0 arguments is set 
 if [ "$1" == "help" ]; then
@@ -29,13 +19,24 @@ if [ "$1" == "help" ]; then
     printf "    use ${YELLOW}\"bash test.sh all\"${BLANK} to run all commands test in the same time.\n"
     exit
 fi
-# Built-in echo checker
 
-cat file_tests/echo_tests.txt | while read line
+# Read inputs files for cat command
+if [ -z "$1" ]; then
+    printf "\033[1;32mYou choose to run all tests.${BLANK}\n\n"
+    FILE_TO_READ="file_tests/echo_tests.txt"
+    sleep 0.5
+else
+    for var in "$@"
     do
-        BASH_RESULT=$(echo $line "; exit" | bash 2>&-)
+        FILE_TO_READ="$FILE_TO_READ $(find file_tests -name "$var?*" -print)"
+    done
+fi
+# Built-in echo checker
+cat $FILE_TO_READ | while read line
+    do
+        BASH_RESULT=$(echo $line "; exit"| bash 2>&-)
         BASH_EXIT=$?
-        MINISHELL_RESULT=$(echo $line "; exit" | ./minishell 2>&-)
+        MINISHELL_RESULT=$(echo $line "; exit"| ./minishell 2>&-)
         MINISHELL_EXIT=$?
         if [ "$1" == "--diff" ]; then
             if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
@@ -43,7 +44,7 @@ cat file_tests/echo_tests.txt | while read line
                     echo $line >> tmp/file
             else
                 if [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
-                    printf (${RED}$i: [$line]\nbash: [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
+                    printf "${RED}$i: [$line]\nbash: [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
                 else
                     printf "${RED}$i: [$line]\nbash: [$BASH_RESULT][$BASH_EXIT] | minishell: [$MINISHELL_RESULT][$MINISHELL_EXIT]\n"
                 fi
