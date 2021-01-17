@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/16 15:28:28 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/16 19:32:07 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ PATH_executable=../minishell
 i=1
 FILE_TO_READ=
 RUN=1
+DIFF_FLAGS=0
 
 # Check if 0 arguments is set 
 if [ "$1" == "help" ]; then
@@ -57,7 +58,13 @@ if [ "$RUN" == "1" ]; then
 	else
 		for var in "$@"
 		do
-			FILE_TO_READ="$FILE_TO_READ $(find file_tests -name "$var?*" -print)"
+			if [ "$var" == "--diff" ]; then
+				printf "\033[1;32mYou choose to run all tests.${BLANK}\n\n"
+				FILE_TO_READ="file_tests/echo_tests.txt"
+				DIFF_FLAGS=1
+			else
+				FILE_TO_READ="$FILE_TO_READ $(find file_tests -name "$var?*" -print)"
+			fi
 		done
 	fi
 	# Built-in echo checker
@@ -67,15 +74,15 @@ if [ "$RUN" == "1" ]; then
 			BASH_EXIT=$?
 			MINISHELL_RESULT=$(echo $line "; exit"| ./minishell 2>&-)
 			MINISHELL_EXIT=$?
-			if [ "$1" == "--diff" ]; then
+			if [ "$DIFF_FLAGS" == "1" ]; then
 				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
 						printf "${GREEN}$i: $line\n"
 						echo $line >> tmp
 				else
 					if [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
-						printf "${RED}$i:      [$line]\nbash     : [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
+						printf "${RED}$i:        [$line]\nbash     : [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
 					else
-						printf "${RED}$i:      [$line]\nbash     : [$BASH_RESULT][$BASH_EXIT]\nminishell: [$MINISHELL_RESULT][$MINISHELL_EXIT]\n"
+						printf "${RED}$i:        [$line]\nbash     : [$BASH_RESULT][$BASH_EXIT]\nminishell: [$MINISHELL_RESULT][$MINISHELL_EXIT]\n"
 					fi
 				fi
 			else
@@ -87,7 +94,7 @@ if [ "$RUN" == "1" ]; then
 				fi
 			fi
 			i=$((i + 1))
-			sleep 0.1
+			sleep 0.08
 		done
 	if [ "$1" == "echo" ] || [ "$2" == "echo" ]; then
 		printf "\n${GREEN}Built-in echo result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
