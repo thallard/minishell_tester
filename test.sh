@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/16 19:32:07 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/18 13:54:56 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,18 +35,18 @@ if [ "$1" == "help" ]; then
 fi
 
 # Check if Makefile and minishell executable exists in the parent folder
-# if [[ -f "$PATH_Makefile/Makefile" ]]; then
-# 	make all -C ..
-# else
-# 	printf "\033[1;31mError : Makefile doesn't found with the path : \"$PATH_Makefile\", please be sure to change the variable \"PATH_Makefile\" or to move your Makefile in the right folder.\n"
-# 	RUN=0
-# fi
-# if [[ -f "$PATH_executable" ]]; then
-# 	cp "$PATH_executable" . 
-# else
-# 	printf "\033[1;31mError : Executable \"minishell\" doesn't found with the path : \""$PATH_executable"\", please be sure to change the variable \""$PATH_executable"\" or to move your executable in the right folder.\n"
-# 	RUN=0
-# fi
+if [[ -f "$PATH_Makefile/Makefile" ]]; then
+	make all -C ..
+else
+	printf "\033[1;31mError : Makefile doesn't found with the path : \"$PATH_Makefile\", please be sure to change the variable \"PATH_Makefile\" or to move your Makefile in the right folder.\n"
+	RUN=0
+fi
+if [[ -f "$PATH_executable" ]]; then
+	cp "$PATH_executable" . 
+else
+	printf "\033[1;31mError : Executable \"minishell\" doesn't found with the path : \""$PATH_executable"\", please be sure to change the variable \""$PATH_executable"\" or to move your executable in the right folder.\n"
+	RUN=0
+fi
 
 # Run main program if all the checks are done
 if [ "$RUN" == "1" ]; then
@@ -94,7 +94,7 @@ if [ "$RUN" == "1" ]; then
 				fi
 			fi
 			i=$((i + 1))
-			sleep 0.08
+			sleep 0.03
 		done
 	if [ "$1" == "echo" ] || [ "$2" == "echo" ]; then
 		printf "\n${GREEN}Built-in echo result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
