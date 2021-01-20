@@ -1,0 +1,6 @@
+echo test > ls ; cat ls
+echo test > ls >> ls >> ls ; echo test >> ls; cat ls
+> lol echo test lol; cat lol
+>lol echo > test>lol>test>>lol>test mdr >lol test >test; cat test
+cat < ls
+cat < ls > ls
