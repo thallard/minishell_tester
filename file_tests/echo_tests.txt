@@ -29,14 +29,9 @@ echo ''''''''''$USER''''''''''
 echo """"""""$USER""""""""
 echo $USER'$USER'text oui oui     oui  oui $USER oui      $USER ''
 echo $USER '' $USER $USER '' $USER '' $USER -n $USER
-echo " \" $USER"
 echo ' \' ' \'
 echo '\" ' " \"\""
-echo "$USER" "\"\"" \'
-echo \" \" \" \"\"\" \'\'\'
-echo "\"" " \$USER"
-echo "\"" " \$USER$PWD/file "
-echo "     $USER """''''''''"$USER " $USER " $USER '$USER'text text$USER""
+echo \\\" \\\" \\\" \\\"\\\"\\\" \\\'\\\'\\\'
 echo "$USER""$USER""$USER"
 echo text"$USER"test
 echo '$USER' "$USER" "text \' text"
@@ -105,3 +100,4 @@ echo $PWD; echo $OLDPWD; cd ' // '; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ' //home'; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '     //home    '; pwd; echo $PWD; echo $OLDPWD
+'echo testing multi ; echo "test 1 ; | and 2" ; cat tests/lorem.txt | grep Lorem'

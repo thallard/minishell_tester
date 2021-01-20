@@ -1,0 +1,314 @@
+echo
+echo bonjour
+echo lalalala lalalalal alalalalal alalalala
+echo lalalala                lalalalal      alalalalal alalalala
+echo " + config.LOREM)
+echo -n
+echo -n bonjour
+echo -n lalalala lalalalal alalalalal alalalala
+echo -n lalalala                lalalalal      alalalalal alalalala
+echo -n " + config.LOREM)
+echo bonjour -n
+echo -n bonjour -n
+echo                     bonjour             je
+echo       -n            bonjour             je
+echo a '' b '' c '' d
+echo a "" b "" c "" d
+echo -n a '' b '' c '' d
+echo -n a "" b "" c "" d
+echo '' '' ''
+Echo bonjour
+eCho bonjour
+ecHo bonjour
+echO bonjour
+EchO bonjour
+eCHo bonjour
+EcHo bonjour
+eChO bonjour
+Echo bonjour"
+eCho bonjour"
+ecHo bonjour"
+echO bonjour"
+EchO bonjour"
+eCHo bonjour"
+EcHo bonjour"
+eChO bonjour"
+eChO -e 'bonjo\\nur'
+echo -n -n -n -n bonjour
+echo -nnnnnnnnnnnnnnnnnnnnn bonjour
+echo -nnnnnnnnnnnnnnnnnnnnn -n -n -n bonjour -n -n
+
+
+export A=a; echo $A
+export A=a B=b C=c; echo $A$B$C
+export BONJOURJESUIS=a; echo $BONJOURJESUIS
+export bonjourjesuis=a; echo $bonjourjesuis
+export bonjour_je_suis=a; echo $bonjour_je_suis
+export BONJOURJESUIS1=a; echo $BONJOURJESUIS1
+export bO_nJq123o__1ju_je3234sui__a=a; echo $bO_nJq123o__1ju_je3234sui__a
+export a0123456789=a; echo $a0123456789
+export abcdefghijklmnopqrstuvwxyz=a; echo $abcdefghijklmnopqrstuvwxyz
+export ABCDEFGHIJKLMNOPQRSTUVWXYZ=a; echo $ABCDEFGHIJKLMNOPQRSTUVWXYZ
+export __________________________=a; echo $__________________________
+export _bonjour_=a; echo $_bonjour_
+export _=a; echo $_a
+export 1=a
+export BONJOURJESUIS =a
+export BONJOURJESUIS= a
+export BONJOUR\\JESUIS=a
+export BONJOUR\'JESUIS=a
+export BONJOUR\"JESUIS=a
+export BONJOUR\$JESUIS=a
+export BONJOUR\&JESUIS=a
+export BONJOUR\|JESUIS=a
+export BONJOUR\;JESUIS=a
+export BONJOUR\_JESUIS=a
+export BONJOUR\0JESUIS=a
+export \B\O\N\ \ \ \ \ \ \ JOURJESUIS=a
+export A=\B\O\N\ \ \ \ \ \ \ JOURJESUIS; echo $A
+export A='bonjour je suis charles'; echo $A
+export A="bonjour je suis charles"; echo $A
+export A==a; echo $A
+export A===a; echo $A
+export A====a; echo $A
+export A=====a; echo $A
+export A======a; echo $A
+export A=a=a=a=a=a; echo $A
+export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
+export 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
+export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '; echo $A$B$C
+export A B C; echo $A$B$C
+export A B C; env
+export 'AH@'=nop
+export \"AH'\"=nop
+export 'AH\"'=nop
+export 'AH$'=nop
+export 'AH!'=nop
+export 'AH|'=nop
+export 'AH;'=nop
+export 'AH&'=nop
+export 'AH\\'=nop
+export $TEST
+export BONJOUR\\JESUIS
+export BONJOUR\'JESUIS
+export BONJOUR\"JESUIS
+export BONJOUR\$JESUIS
+export BONJOUR\&JESUIS
+export BONJOUR\|JESUIS
+export BONJOUR\;JESUIS
+export BONJOUR\_JESUIS
+export BONJOUR\0JESUIS
+Export B=bonjour
+exporT B=bonjour
+Export B=bonjour
+exporT B=bonjour
+
+
+echo $PWD; echo $OLDPWD; cd .; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../../../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../../../../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ../../../../../..; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD
+cd /etc; pwd; echo $PWD
+echo $PWD; echo $OLDPWD; cd ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '' ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '' '' ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d ''; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d d; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d ' '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd $HOME; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /.; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /./; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /././././; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd //; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ///; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ////; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd //////////////////////////////////////////////////////; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' /'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' / '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '                  /'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '                  /              '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' // '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd ' //home'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '     //home    '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 000 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 001 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 002 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 003 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 004 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 005 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 006 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 007 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 010 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 020 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 030 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 040 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 050 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 060 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 070 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 100 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 200 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 300 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 400 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 500 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 600 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 700 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 755 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 644 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 311 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 111 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 222 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 333 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 0777 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 1000 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 2000 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 3000 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 4000 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 5000 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 6000 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 7000 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 1777 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 2777 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 3777 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 4777 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 5777 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 6777 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 7777 d
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 0000 d
+echo $PWD; echo $OLDPWD; cd /; echo $PWD; echo $OLDPWD; unset PWD; cd /dev; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd /; echo $PWD; echo $OLDPWD; export PWD=bonjour; cd /dev; echo $OLDPWD
+cd '\t'; pwd; echo $PWD;
+cd '\t   \t\t\t    '; pwd; echo $PWD;
+cd ~; pwd; echo $PWD;
+cd ~/..; pwd; echo $PWD;
+cd ~/../..; pwd; echo $PWD;
+cd $HOME; pwd; echo $PWD
+Cd .
+cD .
+Cd .
+cD .
+
+
+unset
+unset A; echo $A
+unset 'A '; echo $A
+unset 'A='; echo $A
+unset A B C; echo $A$B$C
+unset A
+unset 'AH@'=nop
+unset \"AH'\"=nop
+unset 'AH\"'=nop
+unset 'AH$'=nop
+unset 'AH!'=nop
+unset 'AH|'=nop
+unset 'AH;'=nop
+unset 'AH&'=nop
+unset 'AH\\'=nop
+Unset TERM
+unseT TERM
+Unset TERM
+unseT TERM
+
+
+pwd | cat -e
+pwd
+unset PWD; pwd; echo $PWD
+export PWD=foo; pwd; echo $PWD
+cd lnk; rmdir ../d; pwd", setup="mkdir d; ln -s d lnk
+Pwd
+pwD
+Pwd
+pwD
+
+
+env
+env | cat -e
+Env
+enV
+Env
+env
+
+
+exit
+exit 1
+exit 2
+exit 3
+exit ' 3'
+exit '\t3'
+exit '\t\f\r 3'
+exit '3 '
+exit '3\t'
+exit '3\r'
+exit '3\t\f\r '
+exit '3     a'
+exit '3\t\t\ta'
+exit 0
+exit -0
+exit -1
+exit 255
+exit 256
+exit 2000000
+exit -2000000
+exit 2147483647
+exit -2147483648
+exit 2147483648
+exit -2147483649
+exit 3147483648
+exit -3147483649
+exit 4294967295
+exit 4294967296
+exit -9223372036854775808
+exit 9223372036854775807
+exit -9223372036854775809
+exit 9223372036854775808
+exit 18446744073709551615
+exit 18446744073709551616
+exit +1
+exit +2
+exit +3
+exit +0
+exit +255
+exit +256
+exit +2000000
+exit +2147483647
+exit ++1
+exit ++2
+exit ++3
+exit ++0
+exit ++255
+exit ++256
+exit ++2000000
+exit ++2147483647
+exit --1
+exit --2
+exit --3
+exit --0
+exit --255
+exit --256
+exit --2000000
+exit --2147483647
+exit bonjour
+exit 0_
+exit _0
+exit 0123456789
+exit -0123456789
+exit 00000000000000000000000000000000000000000000001
+exit 0 bonjour
+exit bonjour 0
+exit 0 1
+exit 0 1 2 3 4 5 6 7 8 9
+exit bonjoru; echo should have exited
+exit 99999999999999999999999999999999999999999999999999999; echo should have exited
+exit 9999; echo should have exited
+Exit; echo a
+exiT; echo a
+Exit; echo a
+exiT; echo a0123456789

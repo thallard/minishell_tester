@@ -21,3 +21,4 @@ export TEST= ; env | grep "TEST" ; unset TEST
 export TEST= ; env | grep "TEST" ; unset TEST
 export TEST= ; env | grep "TEST" ; unset TEST
 export TEST= ; env | grep "TEST" ; unset TEST
+export TEST= ; env | grep "TEST" ; unset TEST
