@@ -1,0 +1,148 @@
+echo bonjour; echo je
+echo bonjour ;echo je
+echo bonjour ; echo je
+echo bonjour;
+echo; 
+echo ; 
+echo ;
+; echo
+ ;echo
+ ; echo
+echo a ; echo b; echo c ;echo d     ;   echo e   ;echo f;        echo g  ;echo h; echo i
+ls doesnotexists ; echo bonjour
+ls doesnotexists; echo bonjour
+echo bonjour; ls doesnotexists
+echo a ; ;
+echo a ;; echo b
+echo a ;;;;; echo b
+ls " + 40 * " ; ls
+ls " + 80 * " ; ls
+ls " + 40 * " ; ls" + ";
+ls " + 80 * " ; ls" + ";
+
+
+cat /etc/shells | head -c 10
+cat -e /etc/shells | head -c 10
+cat -e /etc/shells | cat -e | head -c 10
+cat -e /etc/shells | cat -e | cat -e | head -c 10
+echo bonjour | cat
+echo bonjour | cat -e
+echo bonjour | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
+ls | cat -e
+ls -l | cat -e
+ls -l | cat -e | cat | cat | cat
+ls -l | cat -e | cat -e | cat -e | cat -e
+ls -l | cat -e < a
+echo|
+echo |
+echo | 
+|cat
+| cat
+ | cat
+echo a | export A=a; echo $A
+export A=a | cat; echo $A
+echo bonjour | | cat -e
+echo bonjour | asdf
+asdf | echo bonjour
+echo a ||| echo b
+ls " + 40 * " | ls
+ls " + 80 * " | ls
+echo bonjour " + 40 * " | cat -e
+echo bonjour " + 80 * " | cat -e
+ls asdfasdf | echo a
+echo a | ls asdfasdf
+ls asdfasdf | echo a; echo b
+echo a | ls asdfasdf; echo b
+echo a > foo | cat -e
+echo a >> foo | cat -e
+echo a | cat -e < foo
+echo a > bar | cat -e < foo", setup="echo b > foo
+
+
+echo bonjour&& echo je
+echo bonjour &&echo je
+echo bonjour && echo je
+echo bonjour&&
+echo&&
+echo &&
+echo a&& echo b&& echo c&& echo d&& echo e&& echo f&& echo g&& echo h&& echo i&&
+echo a && echo b&& echo c &&echo d     &&   echo e   &&echo f&&        echo g  &&echo h&& echo i&&
+ls doesnotexists && echo bonjour
+ls doesnotexists&& echo bonjour
+echo bonjour&& ls doesnotexists
+ls " + 40 * " && ls
+ls " + 80 * " && ls
+
+
+echo bonjour|| echo je
+echo bonjour ||echo je
+echo bonjour || echo je
+echo bonjour||
+echo|| 
+echo ||
+echo a|| echo b|| echo c|| echo d|| echo e|| echo f|| echo g|| echo h|| echo i
+echo a || echo b|| echo c ||echo d     ||   echo e   ||echo f||        echo g  ||echo h|| echo i
+ls doesnotexists || echo bonjour
+ls doesnotexists|| echo bonjour
+echo bonjour|| ls doesnotexists
+ls asdf" + 40 * " || ls asdf
+ls asdf" + 80 * " || ls asdf
+
+< | a
+> | a
+>> | a
+< ; a
+> ; a
+>> ; a
+; | a
+; < a
+; > a
+; >> a
+| ; a
+| < a
+| > a
+| >> a
+> a ; a
+< a ; a
+>> a ; a
+
+
+< && a
+> && a
+>> && a
+< || a
+> || a
+>> || a
+< ( a
+> ( a
+>> ( a
+< ) a
+> ) a
+>> ) a
+&& < a
+&& > a
+&& >> a
+&& || a
+&& ( a
+&& ) a
+|| < a
+|| > a
+|| >> a
+|| && a
+|| ( a 
+|| ) a"
+( < a
+( > a
+( >> a
+) < a
+) > a
+) >> a
+( && a
+( || a
+( ) a
+) && a
+) || a
+) ( a
+() a
+( a
+) a

@@ -1,0 +1,182 @@
+'echo' 'bonjour'
+'echo' 'je' 'suis' 'charles'
+"echo" "bonjour"
+"echo" "je" "suis" "charles"
+echo je\'suis\'"charles"
+echo "je"suis\'charles\'
+echo \'je\'"suis"charles
+echo "\\""
+echo "\\$"
+echo "\\\\"
+echo "\\a"
+echo "\\A"
+ls ""
+ls ''
+ls "" "" "" \'\' """"
+ls '' '' '''' ''
+'     echo' bonjour
+'echo     ' bonjour
+"     echo" bonjour
+"echo     " bonjour
+''echo bonjour
+""echo bonjour
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''echo bonjour
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""echo bonjour
+echo'' bonjour
+echo"" bonjour
+echo'''''''''''''''''''''''''''''''''''''''''''''''''''''''''' bonjour
+echo"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" bonjour
+ec''ho bonjour
+ec""ho bonjour
+ec''''''''''''''''''''''''''''''''''''''''''''''''''''''''''ho bonjour
+ec""""""""""""""""""""""""""""""""""""""""""""""""""""""""""ho bonjour
+'''''''e''''''''''c''''''''''''h''''''''o''''''''''''''''''''' bonjour
+"""""""e""""""""""c""""""""""""h""""""""o""""""""""""""""""""" bonjour
+echo '\"'
+echo '\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"'
+echo "\'"
+echo "\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'"
+echo '''''''''''''''''''''''''''''''''''''''''''
+echo """""""""""""""""""""""""""""""""""""""""""
+echo 'AH\\'
+echo "AH\\"
+echo "AH\\""
+echo '\\''
+echo "\\""
+echo "\\\\""
+
+
+echo $TEST
+echo $TES
+echo $TEST_
+echo "|$TEST|"
+echo "|$TES|"
+echo "|$TEST_|"
+echo '|$TEST|'
+echo '|$TES|'
+echo '|$TEST_|'
+echo $A$B$C
+echo "$A$B$C"
+echo '$A$B$C'
+echo $A,$B,$C
+echo "$A,$B,$C"
+echo '$A,$B,$C'
+echo $A"$B"$C"A"$B"$C"
+echo $A'$B'$C'A'$B'$C'
+echo $A"$B"$C"A"$B"$C"
+echo $A'$B'$C'A'$B'$C'
+echo $A
+echo $A$B
+echo $A$B$C
+echo $A$B$C$D
+echo [$A]
+echo \ \ \ \ \ \ \ $A\ \ \ \ \ \ 
+echo $A
+echo [$A]
+echo "[$A]"
+echo \\ $A
+echo $A\\ 
+echo $A$A$A
+echo $A
+echo "$A"
+echo '$A'
+$ECHO $ECHO
+$A$B bonjour
+$LS
+echo $
+echo \\$
+echo \\$\\$\\$\\$
+echo \\$$\\$$
+echo $\\A $\\B
+echo $\\A$\\B
+echo $A
+echo @$A@
+echo @ $A@
+echo @$A @
+echo @$A@
+echo '@'$A'@'
+echo '@' $A'@'
+echo '@'$A '@'
+echo "@"$A"@"
+echo "@" $A"@"
+echo "@"$A "@"
+echo @"$A"@
+echo @ "$A"@
+echo @"$A" @
+echo @"$A"@
+echo '@'\"$A\"'@'
+echo '@' \"$A\"'@'
+echo '@'\"$A\" '@'
+echo "@""$A""@"
+echo "@" "$A""@"
+echo "@""$A" "@"
+echo $A$B$C
+
+
+echo \a
+\e\c\h\o bonjour
+echo charles\ 
+echo \ \ jesuis\ \ charles
+echo \ \ jesuis\; \ charles
+echo \ \ jesuis\&\& \ charles
+echo \ \ jesuis\|\| \ charles
+echo \ \ jesuis \|\| \ charles
+echo \ \ jesuis\; \ charles
+echo \ \ \ \ \ \ \ \ 
+echo \ \ \ \ \ \ \ \               \ \ \ \ \ \ 
+echo \$PATH
+echo \$\P\A\T\H
+echo\ bonjour
+\ echo bonjour
+ \ echo bonjour
+                 \ echo bonjour
+ \                 echo bonjour
+                 \                    echo bonjour
+/bin/echo " \  "
+/bin/echo " \" "
+/bin/echo " \' "
+/bin/echo " \a "
+/bin/echo " \b "
+/bin/echo " \| "
+/bin/echo " \! "
+/bin/echo " \@ "
+/bin/echo " \$ "
+/bin/echo " \$LESS "
+/bin/echo " \$? "
+/bin/echo " \\ "
+/bin/echo " \\\ "
+/bin/echo " \\\\ "
+/bin/echo " \\\\\ "
+/bin/echo " \\\\\\ "
+/bin/echo " \\\\\\\ "
+/bin/echo " \\\\\\\\ "
+/bin/echo ' \  '
+/bin/echo ' \" '
+/bin/echo ' \a '
+/bin/echo ' \b '
+/bin/echo ' \| '
+/bin/echo ' \! '
+/bin/echo ' \@ '
+/bin/echo ' \$ '
+/bin/echo ' $LESS '
+/bin/echo ' \$? '
+/bin/echo ' \\ '
+/bin/echo ' \\\ '
+echo \\
+echo \"\\\"\"'bonjour'
+
+
+echo foo
+echo                    foo
+             echo foo
+echo foo             
+         echo           foo             
+echo\t\t\t\t\t\t\t\t\t\tfoo
+\t\t\t\t\t\techo\tfoo
+echo\tfoo\t\t\t\t\t\t
+\t\t\t\techo\t\t\t\tfoo\t\t\t\t
+\fecho\ffoo
+\necho\nfoo
+\recho\rfoo
+\vecho\vfoo
+\t\r\v\fecho\v\t\r\vfoo
