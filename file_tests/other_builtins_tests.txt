@@ -2,12 +2,10 @@ echo
 echo bonjour
 echo lalalala lalalalal alalalalal alalalala
 echo lalalala                lalalalal      alalalalal alalalala
-echo " + config.LOREM)
 echo -n
 echo -n bonjour
 echo -n lalalala lalalalal alalalalal alalalala
 echo -n lalalala                lalalalal      alalalalal alalalala
-echo -n " + config.LOREM)
 echo bonjour -n
 echo -n bonjour -n
 echo                     bonjour             je
@@ -92,7 +90,7 @@ export $TEST
 export BONJOUR\\JESUIS
 export BONJOUR\'JESUIS
 export BONJOUR\"JESUIS
-export BONJOUR\$JESUIS
+export BONJOUR\\\$JESUIS
 export BONJOUR\&JESUIS
 export BONJOUR\|JESUIS
 export BONJOUR\;JESUIS
@@ -136,7 +134,7 @@ echo $PWD; echo $OLDPWD; cd ' / '; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '                  /'; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '                  /              '; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ' // '; pwd; echo $PWD; echo $OLDPWD
-echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD"
+echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ' //home'; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '     //home    '; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD", setup="mkdir -m 000 d
