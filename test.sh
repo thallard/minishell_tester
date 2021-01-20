@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/18 13:54:56 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/20 11:14:43 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ if [ "$RUN" == "1" ]; then
 		do
 			if [ "$var" == "--diff" ]; then
 				printf "\033[1;32mYou choose to run all tests.${BLANK}\n\n"
-				FILE_TO_READ="file_tests/echo_tests.txt"
+				FILE_TO_READ="file_tests/echo_tests.txt file_tests/export_tests.txt"
 				DIFF_FLAGS=1
 			else
 				FILE_TO_READ="$FILE_TO_READ $(find file_tests -name "$var?*" -print)"
@@ -70,9 +70,9 @@ if [ "$RUN" == "1" ]; then
 	# Built-in echo checker
 	cat $FILE_TO_READ | while read line
 		do
-			BASH_RESULT=$(echo $line "; exit"| bash 2>&-)
+			BASH_RESULT=$(echo $line  | bash 2>&-)
 			BASH_EXIT=$?
-			MINISHELL_RESULT=$(echo $line "; exit"| ./minishell 2>&-)
+			MINISHELL_RESULT=$(echo $line  | ./minishell 2>&-)
 			MINISHELL_EXIT=$?
 			if [ "$DIFF_FLAGS" == "1" ]; then
 				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
@@ -103,4 +103,7 @@ if [ "$RUN" == "1" ]; then
 		printf "\n${GREEN}Built-in export result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
 		rm -rf tmp
 	fi
+	
+		printf "\n${GREEN}Built-in echo result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
+		rm -rf tmp
 fi

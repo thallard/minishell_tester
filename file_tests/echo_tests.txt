@@ -1,7 +1,21 @@
 echo
+echo echo
+eCho 
+eChO
+eCHO
+ECHO
 echo "bonjour"
 echo bonjour
 echo 'bonjour'
+echo -n bonjour
+echo -nn bonjour
+echo -n -n -n bonjour
+echo -n -n -n bonjour
+echo "-n" bonjour
+echo -n"-n" bonjour
+echo "-nnnn" bonjour
+echo "-n -n -n"-n bonjour
+echo "-n '-n'" bonjour
 echo $USER
 echo "$USER"
 echo "'$USER'"
@@ -11,6 +25,18 @@ echo text"'$USER'" ' $USER '
 echo "text"   "$USER"    "$USER"
 echo '              $USER          '
 echo               text "$USER"            "$USER"text
+echo ''''''''''$USER''''''''''
+echo """"""""$USER""""""""
+echo $USER'$USER'text oui oui     oui  oui $USER oui      $USER ''
+echo $USER '' $USER $USER '' $USER '' $USER -n $USER
+echo " \" $USER"
+echo ' \' ' \'
+echo '\" ' " \"\""
+echo "$USER" "\"\"" \'
+echo \" \" \" \"\"\" \'\'\'
+echo "\"" " \$USER"
+echo "\"" " \$USER$PWD/file "
+echo "     $USER """''''''''"$USER " $USER " $USER '$USER'text text$USER""
 echo "$USER""$USER""$USER"
 echo text"$USER"test
 echo '$USER' "$USER" "text \' text"
@@ -41,7 +67,7 @@ echo "text"$USER > file ; cat file ; rm -f file
 echo $USER"text""'$USER'""$USER" > file >> file2 $USER ; cat file file2 ; rm -f file file2
 echo '$USER'"123$USER123""text" > file ; cat file ; rm -f file
 echo "text" > file >> file1 ; cat file file1 ; rm -f file file1
-echo "text" > file ; cat file ; rm -f file
+echo "text" > file text2> file1; cat file file1; rm -f file file1
 echo "text" > file ; cat file ; rm -f file
 echo "text" > file ; cat file ; rm -f file
 echo "text" > file ; cat file ; rm -f file
@@ -50,3 +76,32 @@ echo "text" > file ; cat file ; rm -f file
 echo "text" > file ; cat file ; rm -f file
 echo "text" > file ; cat file ; rm -f file
 echo "text" > file ; cat file ; rm -f file
+echo $PWD; echo $OLDPWD; cd .; pwd; echo $PWD; echo $OLDPWD                                                        
+echo $PWD; echo $OLDPWD; cd ..; pwd; echo $PWD; echo $OLDPWD                                                       
+echo $PWD; echo $OLDPWD; cd ../..; pwd; echo $PWD; echo $OLDPWD                                                    
+echo $PWD; echo $OLDPWD; cd ../../..; pwd; echo $PWD; echo $OLDPWD                                                 
+echo $PWD; echo $OLDPWD; cd ../../../..; pwd; echo $PWD; echo $OLDPWD                                              
+echo $PWD; echo $OLDPWD; cd ../../../../..; pwd; echo $PWD; echo $OLDPWD                                           
+echo $PWD; echo $OLDPWD; cd ../../../../../..; pwd; echo $PWD; echo $OLDPWD                                        
+echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD                                                        
+echo $PWD; echo $OLDPWD; cd ''; pwd; echo $PWD; echo $OLDPWD                                                       
+echo $PWD; echo $OLDPWD; cd '' ''; pwd; echo $PWD; echo $OLDPWD                                                    
+echo $PWD; echo $OLDPWD; cd '' '' ''; pwd; echo $PWD; echo $OLDPWD                                                 
+echo $PWD; echo $OLDPWD; cd ' '; pwd; echo $PWD; echo $OLDPWD               
+echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD                                                        
+echo $PWD; echo $OLDPWD; cd /.; pwd; echo $PWD; echo $OLDPWD                                                       
+echo $PWD; echo $OLDPWD; cd /./; pwd; echo $PWD; echo $OLDPWD                                                      
+echo $PWD; echo $OLDPWD; cd /././././; pwd; echo $PWD; echo $OLDPWD                                                
+echo $PWD; echo $OLDPWD; cd //; pwd; echo $PWD; echo $OLDPWD                                                       
+echo $PWD; echo $OLDPWD; cd ///; pwd; echo $PWD; echo $OLDPWD                                                      
+echo $PWD; echo $OLDPWD; cd ////; pwd; echo $PWD; echo $OLDPWD                                                     
+echo $PWD; echo $OLDPWD; cd //////////////////////////////////////////////////////; pwd; echo $PWD; echo $OLDPWD   
+echo $PWD; echo $OLDPWD; cd; echo $OLDPWD                                                                          
+echo $PWD; echo $OLDPWD; cd ' /'; pwd; echo $PWD; echo $OLDPWD                                                     
+echo $PWD; echo $OLDPWD; cd ' / '; pwd; echo $PWD; echo $OLDPWD                                                    
+echo $PWD; echo $OLDPWD; cd '                  /'; pwd; echo $PWD; echo $OLDPWD                                    
+echo $PWD; echo $OLDPWD; cd '                  /              '; pwd; echo $PWD; echo $OLDPWD                      
+echo $PWD; echo $OLDPWD; cd ' // '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' //home'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd '     //home    '; pwd; echo $PWD; echo $OLDPWD
