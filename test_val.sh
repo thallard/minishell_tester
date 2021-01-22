@@ -6,7 +6,7 @@
 #    By: bjacob <bjacob@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/22 11:19:11 by bjacob           ###   ########lyon.fr    #
+#    Updated: 2021/01/22 11:31:12 by bjacob           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ if [ "$RUN" == "1" ]; then
 		do
 			BASH_RESULT=$(echo $line  | bash)
 			BASH_EXIT=$?
-			MINISHELL_RESULT=$(echo $line  | valgrind ./minishell)
+			MINISHELL_RESULT=$(echo $line  | valgrind -q ./minishell)
 			MINISHELL_EXIT=$?
 			if [ "$DIFF_FLAGS" == "1" ]; then
 				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
