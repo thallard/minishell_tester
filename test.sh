@@ -6,7 +6,7 @@
 #    By: bjacob <bjacob@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/23 11:20:59 by bjacob           ###   ########lyon.fr    #
+#    Updated: 2021/01/23 11:25:24 by bjacob           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ BLANK='\033[0m'
 YELLOW='\033[0;33m'
 
 PATH_Makefile=..
-PATH_executable=../minishell
+PATH_executable=./minishell
 # Variables
 i=1
 FILE_TO_READ=
@@ -25,22 +25,22 @@ RUN=1
 DIFF_FLAGS=0
 
 # Check if 0 arguments is set 
-if [ "$1" == "help" ]; then
-    printf "How to use this tester ?\n"
-    printf "    use ${YELLOW}\"bash test.sh [--diff] <name_command>\"${BLANK} to run a specific builtin command test (echo, unset, export, etc...).\n\n"
-    printf "    flag ${YELLOW}[--diff]${BLANK} allow when its enabled to see difference between your minishell results and real bash,
-    without this flag enabled you will only see if the test is correct.\n\n"
-    printf "    use ${YELLOW}\"bash test.sh all\"${BLANK} to run all commands test in the same time.\n"
-    exit
-fi
+# if [ "$1" == "help" ]; then
+#     printf "How to use this tester ?\n"
+#     printf "    use ${YELLOW}\"bash test.sh [--diff] <name_command>\"${BLANK} to run a specific builtin command test (echo, unset, export, etc...).\n\n"
+#     printf "    flag ${YELLOW}[--diff]${BLANK} allow when its enabled to see difference between your minishell results and real bash,
+#     without this flag enabled you will only see if the test is correct.\n\n"
+#     printf "    use ${YELLOW}\"bash test.sh all\"${BLANK} to run all commands test in the same time.\n"
+#     exit
+# fi
 
 # Check if Makefile and minishell executable exists in the parent folder
-if [[ -f "$PATH_Makefile/Makefile" ]]; then
-	make all -C ..
-else
-	printf "\033[1;31mError : Makefile doesn't found with the path : \"$PATH_Makefile\", please be sure to change the variable \"PATH_Makefile\" or to move your Makefile in the right folder.\n"
-	RUN=0
-fi
+# if [[ -f "$PATH_Makefile/Makefile" ]]; then
+# 	make all -C ..
+# else
+# 	printf "\033[1;31mError : Makefile doesn't found with the path : \"$PATH_Makefile\", please be sure to change the variable \"PATH_Makefile\" or to move your Makefile in the right folder.\n"
+# 	RUN=0
+# fi
 if [[ -f "$PATH_executable" ]]; then
 	cp "$PATH_executable" . 
 else
@@ -108,4 +108,4 @@ if [ "$RUN" == "1" ]; then
 		rm -rf tmp
 fi
 
-rm -f a bar file foo je suis 'test' teststicked testyosticked
+rm -f a bar file foo je lol ls suis 'test' teststicked testyosticked

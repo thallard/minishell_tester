@@ -6,7 +6,7 @@
 #    By: bjacob <bjacob@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/23 11:20:49 by bjacob           ###   ########lyon.fr    #
+#    Updated: 2021/01/23 11:25:52 by bjacob           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,4 +108,4 @@ if [ "$RUN" == "1" ]; then
 		rm -rf tmp
 fi
 
-rm -f a bar file foo je suis 'test' teststicked testyosticked
+rm -f a bar file foo je lol ls suis 'test' teststicked testyosticked
