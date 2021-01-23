@@ -6,7 +6,7 @@
 #    By: bjacob <bjacob@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/22 11:31:12 by bjacob           ###   ########lyon.fr    #
+#    Updated: 2021/01/23 11:20:49 by bjacob           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ if [ "$RUN" == "1" ]; then
 		do
 			BASH_RESULT=$(echo $line  | bash)
 			BASH_EXIT=$?
-			MINISHELL_RESULT=$(echo $line  | valgrind -q ./minishell)
+			MINISHELL_RESULT=$(echo $line  | valgrind -q --leak-check=full ./minishell)
 			MINISHELL_EXIT=$?
 			if [ "$DIFF_FLAGS" == "1" ]; then
 				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
@@ -107,3 +107,5 @@ if [ "$RUN" == "1" ]; then
 		printf "\n${GREEN}Built-in echo result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
 		rm -rf tmp
 fi
+
+rm -f a bar file foo je suis 'test' teststicked testyosticked

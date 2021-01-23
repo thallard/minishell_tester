@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    test.sh                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: bjacob <bjacob@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/20 11:14:43 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/23 11:20:59 by bjacob           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ if [ "$RUN" == "1" ]; then
 		do
 			if [ "$var" == "--diff" ]; then
 				printf "\033[1;32mYou choose to run all tests.${BLANK}\n\n"
-				FILE_TO_READ="file_tests/echo_tests.txt file_tests/export_tests.txt"
+				FILE_TO_READ="file_tests/tofix_tests.txt"
 				DIFF_FLAGS=1
 			else
 				FILE_TO_READ="$FILE_TO_READ $(find file_tests -name "$var?*" -print)"
@@ -94,7 +94,7 @@ if [ "$RUN" == "1" ]; then
 				fi
 			fi
 			i=$((i + 1))
-			sleep 0.03
+			sleep 0.0000003
 		done
 	if [ "$1" == "echo" ] || [ "$2" == "echo" ]; then
 		printf "\n${GREEN}Built-in echo result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
@@ -107,3 +107,5 @@ if [ "$RUN" == "1" ]; then
 		printf "\n${GREEN}Built-in echo result : $(cat tmp | wc -l | xargs)/$(cat file_tests/echo_tests.txt | wc -l | xargs) tests passed\n"
 		rm -rf tmp
 fi
+
+rm -f a bar file foo je suis 'test' teststicked testyosticked

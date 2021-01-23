@@ -39,8 +39,6 @@ echo |
 |cat
 | cat
  | cat
-echo a | export A=a; echo $A
-export A=a | cat; echo $A
 echo bonjour | | cat -e
 echo bonjour | asdf
 asdf | echo bonjour

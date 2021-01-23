@@ -36,14 +36,11 @@ echo '\"'
 echo '\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"'
 echo "\'"
 echo "\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'\'"
-echo '''''''''''''''''''''''''''''''''''''''''''
-echo """""""""""""""""""""""""""""""""""""""""""
-echo 'AH\\'
-echo "AH\\"
+echo ''''''''''''''''''''''''''''''''''''''''''''
+echo """"""""""""""""""""""""""""""""""""""""""""
+echo 'AH\\\\'
 echo "AH\\""
-echo '\\''
 echo "\\""
-echo "\\\\""
 
 
 echo $TEST
@@ -75,7 +72,6 @@ echo $A
 echo [$A]
 echo "[$A]"
 echo \\ $A
-echo $A\\ 
 echo $A$A$A
 echo $A
 echo "$A"
@@ -133,7 +129,7 @@ echo\ bonjour
  \                 echo bonjour
                  \                    echo bonjour
 /bin/echo " \  "
-/bin/echo " \" "
+/bin/echo " \\" "
 /bin/echo " \' "
 /bin/echo " \a "
 /bin/echo " \b "
@@ -162,7 +158,6 @@ echo\ bonjour
 /bin/echo ' \$? '
 /bin/echo ' \\ '
 /bin/echo ' \\\ '
-echo \\
 echo \"\\\"\"'bonjour'
 
 

@@ -85,7 +85,6 @@ export 'AH|'=nop
 export 'AH;'=nop
 export 'AH&'=nop
 export 'AH\\\\'=nop
-export $TEST
 export BONJOUR\\JESUIS
 export BONJOUR\\\'JESUIS
 export BONJOUR\\\"JESUIS
@@ -109,7 +108,6 @@ echo $PWD; echo $OLDPWD; cd ../../../..; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ../../../../..; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ../../../../../..; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD
-cd /etc; pwd; echo $PWD
 echo $PWD; echo $OLDPWD; cd ''; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '' ''; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '' '' ''; pwd; echo $PWD; echo $OLDPWD
@@ -222,7 +220,6 @@ exit 4294967296
 exit -9223372036854775808
 exit 9223372036854775807
 exit -9223372036854775809
-exit 9223372036854775808
 exit 18446744073709551615
 exit 18446744073709551616
 exit +1
