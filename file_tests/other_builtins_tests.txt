@@ -35,6 +35,13 @@ eChO -e 'bonjo\\nur'
 echo -n -n -n -n bonjour
 echo -nnnnnnnnnnnnnnnnnnnnn bonjour
 echo -nnnnnnnnnnnnnnnnnnnnn -n -n -n bonjour -n -n
+echo ~
+echo "~"
+echo '~'
+echo ~123
+echo 123~
+echo ~/123
+echo ~/123/456
 
 
 export A=a; echo $A
@@ -264,3 +271,6 @@ Exit; echo a
 exiT; echo a
 Exit; echo a
 exiT; echo a0123456789
+
+~
+~   test   ~

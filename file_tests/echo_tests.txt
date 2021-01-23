@@ -16,6 +16,13 @@ echo -n"-n" bonjour
 echo "-nnnn" bonjour
 echo "-n -n -n"-n bonjour
 echo "-n '-n'" bonjour
+echo ~
+echo "~"
+echo '~'
+echo ~123
+echo 123~
+echo ~/123
+echo ~/123/456
 echo $USER
 echo "$USER"
 echo "'$USER'"
