@@ -56,37 +56,7 @@ echo a | ls asdfasdf; echo b
 echo a > foo | cat -e
 echo a >> foo | cat -e
 echo a | cat -e < foo
-echo a > bar | cat -e < foo", setup="echo b > foo
-
-
-echo bonjour&& echo je
-echo bonjour &&echo je
-echo bonjour && echo je
-echo bonjour&&
-echo&&
-echo &&
-echo a&& echo b&& echo c&& echo d&& echo e&& echo f&& echo g&& echo h&& echo i&&
-echo a && echo b&& echo c &&echo d     &&   echo e   &&echo f&&        echo g  &&echo h&& echo i&&
-ls doesnotexists && echo bonjour
-ls doesnotexists&& echo bonjour
-echo bonjour&& ls doesnotexists
-ls " + 40 * " && ls
-ls " + 80 * " && ls
-
-
-echo bonjour|| echo je
-echo bonjour ||echo je
-echo bonjour || echo je
-echo bonjour||
-echo|| 
-echo ||
-echo a|| echo b|| echo c|| echo d|| echo e|| echo f|| echo g|| echo h|| echo i
-echo a || echo b|| echo c ||echo d     ||   echo e   ||echo f||        echo g  ||echo h|| echo i
-ls doesnotexists || echo bonjour
-ls doesnotexists|| echo bonjour
-echo bonjour|| ls doesnotexists
-ls asdf" + 40 * " || ls asdf
-ls asdf" + 80 * " || ls asdf
+echo a > bar | cat -e < foo
 
 < | a
 > | a

@@ -1,0 +1,4 @@
+cd /etc; pwd; echo $PWD
+cd ~/..; pwd; echo $PWD;
+cd ~/../..; pwd; echo $PWD;
+

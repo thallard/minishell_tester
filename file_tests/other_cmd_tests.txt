@@ -84,7 +84,6 @@ cat < noperm
 echo $SHLVL
 
 
-echo $_
 echo; echo $_
 env; echo $_
 export A=a; echo $_

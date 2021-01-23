@@ -1,105 +1,3 @@
-echo
-echo bonjour
-echo lalalala lalalalal alalalalal alalalala
-echo lalalala                lalalalal      alalalalal alalalala
-echo -n
-echo -n bonjour
-echo -n lalalala lalalalal alalalalal alalalala
-echo -n lalalala                lalalalal      alalalalal alalalala
-echo bonjour -n
-echo -n bonjour -n
-echo                     bonjour             je
-echo       -n            bonjour             je
-echo a '' b '' c '' d
-echo a "" b "" c "" d
-echo -n a '' b '' c '' d
-echo -n a "" b "" c "" d
-echo '' '' ''
-Echo bonjour
-eCho bonjour
-ecHo bonjour
-echO bonjour
-EchO bonjour
-eCHo bonjour
-EcHo bonjour
-eChO bonjour
-Echo bonjour
-eCho bonjour
-ecHo bonjour
-echO bonjour
-EchO bonjour
-eCHo bonjour
-EcHo bonjour
-eChO bonjour
-eChO -e 'bonjo\\nur'
-echo -n -n -n -n bonjour
-echo -nnnnnnnnnnnnnnnnnnnnn bonjour
-echo -nnnnnnnnnnnnnnnnnnnnn -n -n -n bonjour -n -n
-
-
-export A=a; echo $A
-export A=a B=b C=c; echo $A$B$C
-export BONJOURJESUIS=a; echo $BONJOURJESUIS
-export bonjourjesuis=a; echo $bonjourjesuis
-export bonjour_je_suis=a; echo $bonjour_je_suis
-export BONJOURJESUIS1=a; echo $BONJOURJESUIS1
-export bO_nJq123o__1ju_je3234sui__a=a; echo $bO_nJq123o__1ju_je3234sui__a
-export a0123456789=a; echo $a0123456789
-export abcdefghijklmnopqrstuvwxyz=a; echo $abcdefghijklmnopqrstuvwxyz
-export ABCDEFGHIJKLMNOPQRSTUVWXYZ=a; echo $ABCDEFGHIJKLMNOPQRSTUVWXYZ
-export __________________________=a; echo $__________________________
-export _bonjour_=a; echo $_bonjour_
-export _=a; echo $_a
-export 1=a
-export BONJOURJESUIS =a
-export BONJOURJESUIS= a
-export BONJOUR\\JESUIS=a
-export BONJOUR\\'JESUIS=a
-export BONJOUR\\"JESUIS=a
-export BONJOUR\\$JESUIS=a
-export BONJOUR\\&JESUIS=a
-export BONJOUR\\|JESUIS=a
-export BONJOUR\\;JESUIS=a
-export BONJOUR\_JESUIS=a
-export BONJOUR\0JESUIS=a
-export \B\O\N\ \ \ \ \ \ \ JOURJESUIS=a
-export A=\B\O\N\ \ \ \ \ \ \ JOURJESUIS; echo $A
-export A='bonjour je suis charles'; echo $A
-export A="bonjour je suis charles"; echo $A
-export A==a; echo $A
-export A===a; echo $A
-export A====a; echo $A
-export A=====a; echo $A
-export A======a; echo $A
-export A=a=a=a=a=a; echo $A
-export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
-export 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf ' C; echo $A$B$C
-export A 'asdf ' B ' asdf asdf asd f' ' asdf ' '' 'asdf '; echo $A$B$C
-export A B C; echo $A$B$C
-export 'AH@'=nop
-export \"AH'\"=nop
-export 'AH\"'=nop
-export 'AH$'=nop
-export 'AH!'=nop
-export 'AH|'=nop
-export 'AH;'=nop
-export 'AH&'=nop
-export 'AH\\\\'=nop
-export $TEST
-export BONJOUR\\JESUIS
-export BONJOUR\\\'JESUIS
-export BONJOUR\\\"JESUIS
-export BONJOUR\\\$JESUIS
-export BONJOUR\\\&JESUIS
-export BONJOUR\|JESUIS
-export BONJOUR\;JESUIS
-export BONJOUR\_JESUIS
-export BONJOUR\0JESUIS
-Export B=bonjour
-exporT B=bonjour
-Export B=bonjour
-exporT B=bonjour
-
 
 echo $PWD; echo $OLDPWD; cd .; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ..; pwd; echo $PWD; echo $OLDPWD
@@ -109,7 +7,6 @@ echo $PWD; echo $OLDPWD; cd ../../../..; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ../../../../..; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ../../../../../..; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /; pwd; echo $PWD; echo $OLDPWD
-cd /etc; pwd; echo $PWD
 echo $PWD; echo $OLDPWD; cd ''; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '' ''; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '' '' ''; pwd; echo $PWD; echo $OLDPWD
@@ -137,19 +34,60 @@ echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd ' //home'; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd '     //home    '; pwd; echo $PWD; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd d; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /; echo $PWD; echo $OLDPWD; unset PWD; cd /dev; echo $OLDPWD
 echo $PWD; echo $OLDPWD; cd /; echo $PWD; echo $OLDPWD; export PWD=bonjour; cd /dev; echo $OLDPWD
 cd '\t'; pwd; echo $PWD;
 cd '\t   \t\t\t    '; pwd; echo $PWD;
 cd ~; pwd; echo $PWD;
-cd ~/..; pwd; echo $PWD;
-cd ~/../..; pwd; echo $PWD;
+
 cd $HOME; pwd; echo $PWD
 Cd .
 cD .
 Cd .
 cD .
-
 
 unset
 unset A; echo $A
@@ -165,7 +103,7 @@ unset 'AH!'=nop
 unset 'AH|'=nop
 unset 'AH;'=nop
 unset 'AH&'=nop
-unset 'AH\\\\'=nop
+unset 'AH\\'=nop
 Unset TERM
 unseT TERM
 Unset TERM
@@ -176,7 +114,7 @@ pwd | cat -e
 pwd
 unset PWD; pwd; echo $PWD
 export PWD=foo; pwd; echo $PWD
-cd lnk; rmdir ../d; pwd
+cd lnk; rmdir ../d; pwd", setup="mkdir d; ln -s d lnk
 Pwd
 pwD
 Pwd
