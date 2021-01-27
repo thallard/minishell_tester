@@ -1,3 +1,5 @@
 cd .. ; pwd
 cd /Users ; pwd
 cd ; pwd
+cd // ; pwd
+cd '//' ; pwd

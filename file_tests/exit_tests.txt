@@ -1,6 +1,27 @@
 exit 42
 exit 42 53 68
 exit 259
+exit -12030
+exit --1239312
+exit ++++1203020103
+exit +0
+exit ++++++0
+exit -----0
+exit azerty
+exit kewkwqke
+exit a
+exit z
+exit "1"
+exit "2"
+exit "+102"
+exit "1230"
+exit "+++1230"
+exit "1"23
+exit "2"32"32"
+exit "'42'"
+exit '42'"42"42
+exit +'42'"42"42
+exit -'42'"42"42
 exit 9223372036854775807
 exit -9223372036854775808
 exit 9223372036854775808
@@ -8,7 +29,5 @@ exit -9223372036854775810
 exit -4
 exit wrong
 exit wrong_command
-gdagadgag
-ls -Z
-cd gdhahahad
-ls -la | wtf
+exit something
+

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    test_val.sh                                        :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bjacob <bjacob@student.42lyon.fr>          +#+  +:+       +#+         #
+#    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/23 11:25:52 by bjacob           ###   ########lyon.fr    #
+#    Updated: 2021/01/27 13:06:01 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,9 +70,9 @@ if [ "$RUN" == "1" ]; then
 	# Built-in echo checker
 	cat $FILE_TO_READ | while read line
 		do
-			BASH_RESULT=$(echo $line  | bash)
+			BASH_RESULT=$(echo $line | bash)
 			BASH_EXIT=$?
-			MINISHELL_RESULT=$(echo $line  | valgrind -q --leak-check=full ./minishell)
+			MINISHELL_RESULT=$(echo $line | valgrind -q --leak-check=full ./minishell)
 			MINISHELL_EXIT=$?
 			if [ "$DIFF_FLAGS" == "1" ]; then
 				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
