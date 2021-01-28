@@ -1,0 +1,112 @@
+echo test | cat -e | cat -e | cat -eecho test > ls ; cat ls
+echo test > ls >> ls >> ls ; echo test >> ls; cat ls
+> lol echo test lol; cat lol
+>lol echo > test>lol>test>>lol>test mdr >lol test >test; cat test
+cat < ls
+cat < ls > ls
+echo text$USER > tmp/file $USER ; cat tmp/file ; rm -f tmp/file
+echo "text"$USER > tmp/file ; cat tmp/file ; rm -f tmp/file
+echo $USER"text""'$USER'""$USER" > tmp/file >> tmp/file2 $USER ; cat tmp/file tmp/file2 ; rm -f tmp/file tmp/file2
+echo '$USER'"123$USER123""text" > tmp/file ; cat tmp/file ; rm -f tmp/file
+echo "text" > tmp/file >> tmp/file1 ; cat tmp/file tmp/file1 ; rm -f tmp/file tmp/file1
+echo "text" > tmp/file text2> tmp/file1; cat tmp/file tmp/file1; rm -f tmp/file tmp/file1
+echo "text" > tmp/file text2 ; cat tmp/file ; rm -f tmp/file
+echo "text" > tmp/file text ; cat tmp/file ; rm -f tmp/file
+echo "text" > tmp/file ; cat tmp/file ; rm -f tmp/file
+echo $USER $USER7777"text"$USER $USER9999 > tmp/file $USER $USER9999 ; cat tmp/file ; rm -f tmp/file
+echo "text" > tmp/file ; cat tmp/file ; rm -f tmp/file
+echo "text" > tmp/file ; cat tmp/file ; rm -f tmp/file
+echo "text" > tmp/file ; cat tmp/file ; rm -f tmp/file
+echo "text" > tmp/file ; cat tmp/file ; rm -f tmp/file;; test
+| test
+echo > <
+echo | |
+<
+;
+|
+>
+qewew
+wtf
+hi im thallard
+nice to meet you
+if thoses tests are green
+then your minishell is perfect
+exit 42
+exit 42 53 68
+exit 259
+exit -12030
+exit --1239312
+exit ++++1203020103
+exit +0
+exit ++++++0
+exit -----0
+exit azerty
+exit kewkwqke
+exit a
+exit z
+exit "1"
+exit "2"
+exit "+102"
+exit "1230"
+exit "+++1230"
+exit "1"23
+exit "2"32"32"
+exit "'42'"
+exit '42'"42"42
+exit +'42'"42"42
+exit -'42'"42"42
+exit 9223372036854775807
+exit -9223372036854775808
+exit 9223372036854775808
+exit -9223372036854775810
+exit -4
+exit wrong
+exit wrong_command
+exit something
+export | grep "SHLVL"
+export TEST
+export ==========
+export 1TEST=
+export TEST
+export ""=""
+export TES=T=""
+export TE+S=T=""
+export _________________= ; echo $_________________
+export TEST=LOL ; echo $TEST
+export TEST=LOL ; echo $TEST$TEST$TEST=lol$TEST
+export TEST=LOL; export TEST+=LOL ; echo $TEST
+export TEST="ls -l - a" ; echo $TEST
+export TEST ; echo $TEST
+export TEST= ; echo $TEST
+export TEST=123 ; echo $TEST
+export ___TEST=123 ; echo $TEST
+export --TEST=123 ; echo $TEST
+export ""=""
+export ''=''
+export "="="="
+export '='='='
+export TE;ST=100
+export TE|ST=100
+export TE\ST=100
+export TE-ST=100
+export -TEST=100
+export TEST-=100
+export _TEST=100
+export TEST+=100 ; echo $TEST ; export TEST+=200 ; echo $TEST
+export TEST=123 0$TEST=0123 ; echo $TEST
+export TEST ; env | grep "TEST" ; unset TEST
+export TEST= ; env | grep "TEST" ; unset TEST
+export TEST="" ; env | grep "TEST" ; unset TEST
+export TEST='' ; env | grep "TEST" ; unset TEST
+export TEST=100 TEST2=100 ; env | grep "TEST" ; unset TEST TEST2
+export TEST=100 TEST1=200 ; env | grep "TEST" ; unset TEST TEST1
+export TEST="100" ; env | grep "TEST" ; unset TEST
+export TEST='"$USER"' ; env | grep "TEST" ; unset TEST
+export TEST="$USER" ; env | grep "TEST" ; unset TEST
+export TEST="$USER$USER" ; env | grep "TEST" ; unset TEST
+export TEST="'$USER'""test" ; env | grep "TEST" ; unset TEST
+export TEST="$USER" TEST1=$TEST ; env | grep "TEST" ; unset TEST
+export TEST=LOL ; export TEST+=LOL ; env | grep "TEST" ; unset TEST
+export TEST=LOL ; export TEST-=LOL ; env | grep "TEST" ; unset TEST
+echo $SHLVL ; env | grep "SHLVL"whereis ls | cat -e | cat -e > test
+cd ' ////' 2>/dev/null

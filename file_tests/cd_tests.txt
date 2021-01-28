@@ -3,3 +3,7 @@ cd /Users ; pwd
 cd ; pwd
 cd // ; pwd
 cd '//' ; pwd
+cd ////// ; pwd
+cd ./././ ; pwd
+pwd ; cd . ; pwd
+cd / ; cd Users ; pwd ; cd .. ; pwd

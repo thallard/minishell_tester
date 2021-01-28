@@ -1,0 +1,21 @@
+export ""=""
+export ''=''
+export "="="="
+export '='='='
+export TE-ST=100
+export -TEST=100
+export TEST-=100
+export TEST+=100 ; echo $TEST ; export TEST+=200 ; echo $TEST
+export TEST= ; env | grep "TEST" ; unset TEST
+export TEST="" ; env | grep "TEST" ; unset TEST
+export TEST='' ; env | grep "TEST" ; unset TEST
+export TEST=100 TEST2=100 ; env | grep "TEST" ; unset TEST TEST2
+export TEST=100 TEST1=200 ; env | grep "TEST" ; unset TEST TEST1
+export TEST="100" ; env | grep "TEST" ; unset TEST
+export TEST='"$USER"' ; env | grep "TEST" ; unset TEST
+export TEST="$USER" ; env | grep "TEST" ; unset TEST
+export TEST="$USER$USER" ; env | grep "TEST" ; unset TEST
+export TEST="'$USER'""test" ; env | grep "TEST" ; unset TEST
+export TEST="$USER" TEST1=$TEST ; env | grep "TEST" ; unset TEST
+export TEST=LOL ; export TEST+=LOL ; env | grep "TEST" ; unset TEST
+export TEST=LOL ; export TEST-=LOL ; env | grep "TEST" ; unset TEST
