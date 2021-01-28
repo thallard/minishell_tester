@@ -2,7 +2,7 @@
 
 ## Overview
 
-![](tmp/preview.mp4)
+![](tmp/preview.gif)
 
 ## Prerequis 
 You must have the below part in your main of your minishell, otherwise you will can't use the tester.
