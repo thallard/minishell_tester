@@ -1,0 +1,3 @@
+whereis ls | cat -e | cat -e > test
+cd '  ////' 2>/dev/null
+echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e

@@ -3,6 +3,10 @@ export TEST= ; echo $TEST
 export TEST=123 ; echo $TEST
 export ___TEST=123 ; echo $TEST
 export --TEST=123 ; echo $TEST
+export ""=""
+export ''=''
+export "="="="
+export '='='='
 export TE;ST=100
 export TE|ST=100
 export TE\\\ST=100

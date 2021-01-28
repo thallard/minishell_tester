@@ -1,28 +1,12 @@
-echo test     \    test
-echo \\\"test
-echo $TEST
-echo "$TEST"
-echo '$TEST'
-echo "$TEST$TEST$TEST"
-echo "$TEST$TEST=lol$TEST"
-echo "   $TEST lol $TEST"
-echo $TEST$TEST$TEST
-echo $TEST$TEST=lol$TEST""lol
-echo    $TEST lol $TEST
-echo test "" test "" test
-echo "\$TEST"
-echo "$=TEST"
-echo "$"
-echo "$?TEST"
-echo $TEST $TEST
-echo "$1TEST"
-echo "$T1TEST"
-export =
+export | grep "SHLVL"
+  export TEST
+export ==========
 export 1TEST=
 export TEST
 export ""=""
 export TES=T=""
 export TE+S=T=""
+export _________________= ; echo $_________________
 export TEST=LOL ; echo $TEST 
 export TEST=LOL ; echo $TEST$TEST$TEST=lol$TEST
 export TEST=LOL; export TEST+=LOL ; echo $TEST

@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/27 12:55:38 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/28 13:41:12 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ BLANK='\033[0m'
 YELLOW='\033[0;33m'
 
 # ----------------------- MODIFY THESE VARIABLES ----------------------------
-# Modify this variable if your Makefile or your minishell executable is not found
+# Please modify this variable if your Makefile or your minishell executable is not found
 PATH_Makefile=..
 PATH_executable=./minishell
 
@@ -31,10 +31,11 @@ ALL=0
 # Check if 0 arguments is set 
 if [ "$1" == "help" ]; then
     printf "How to use this tester ?\n"
-    printf "    use ${YELLOW}\"bash test.sh [--diff] <name_command>\"${BLANK} to run a specific builtin command test (echo, unset, export, etc...).\n\n"
-    printf "    flag ${YELLOW}[--diff]${BLANK} allow when its enabled to see difference between your minishell results and real bash,
-    without this flag enabled you will only see if the test is correct.\n\n"
-    printf "    use ${YELLOW}\"bash test.sh all\"${BLANK} to run all commands test in the same time.\n"
+    printf "    use ${YELLOW}\"bash test.sh [--diff] [--fast] <name_file> ...\"${BLANK} to run a specific built-in command test (echo, unset, export, etc...).\n"
+	    printf "    use ${YELLOW}\"bash test.sh all\"${BLANK} to run all commands test at the same time.\n\n"
+    printf "    flag ${YELLOW}[--diff]${BLANK} allow when its enabled to see the difference(s) between your minishell results and real bash ones, without this flag enabled you will only see if the test is correct.\n"
+	printf "    flag ${YELLOW}[--fast] ${BLANK}or ${YELLOW}[-f] ${BLANK}allow to increase the delay between each test.\n"
+
     exit
 fi
 
@@ -48,7 +49,7 @@ fi
 if [[ -f "$PATH_executable" ]]; then
 	cp ../minishell . 
 else
-	printf "\033[1;31mError : Executable \"minishell\" doesn't found with the path : \""$PATH_executable"\", please be sure to change the variable \""$PATH_executable"\" or to move your executable in the right folder.\n"
+	printf "\033[1;31mError : Executable \"minishell\" doesn't found with the path : \""$PATH_executable"\", please be sure to change the variable \"PATH_executable\" or to move your executable in the right folder.\n"
 	RUN=0
 fi
 
@@ -57,7 +58,7 @@ if [ "$RUN" == "1" ]; then
 	# Read inputs files for cat command
 	if [ -z "$1" ]; then
 		printf "\033[1;32mYou choose to run all tests without ${YELLOW}[--diff]\033[1;32m (differences between minishell and bash results).${BLANK}\n\n"
-		FILE_TO_READ="$(find file_tests -print)"
+		FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
 		ALL=1
 		sleep 4
 	else
@@ -65,20 +66,29 @@ if [ "$RUN" == "1" ]; then
 		do
 			if [ "$var" == "--diff" ]; then
 				printf "\033[1;32mYou choose to run all tests.${BLANK}\n\n"
-				FILE_TO_READ="file_tests/tofix_tests.txt"
+				FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
 				DIFF_FLAGS=1
 			else
 				if [ "$var" == "all" ]; then
 					FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
+					if [ -z "$(find file_tests -type f -name "*.txt" -print)" ]; then
+						printf "${REDB}Error, 0 files founded in ./file_tests with \"all\" tag.\n"
+						exit
+					fi
 					ALL=1
 					break 
 				else
 					FILE_TO_READ="$FILE_TO_READ $(find file_tests -name "$var?*" -print)"
+					if [ -z "$(find file_tests -name "$var?*" -print)" ]; then
+						printf "${REDB}Error, 0 files founded with \"${var}\" tag.\n"
+						exit
+					fi
 				fi
 			fi
 		done
 	fi
 	echo -n > file_tests/tofix_tests.txt
+	echo -n > tmp/tmp
 	# Main process checking each line and compare minishell executable + bash results
 	cat $FILE_TO_READ | while read line
 		do
@@ -87,9 +97,8 @@ if [ "$RUN" == "1" ]; then
 			fi
 			BASH_RESULT=$(echo $line | bash 2>&-)
 			BASH_EXIT=$?
-			MINISHELL_RESULT=$(echo $line | ./minishell 2>&-)
+			MINISHELL_RESULT=$(echo $line ./minishell 2>&-)
 			MINISHELL_EXIT=$?
-			
 			if [ "$DIFF_FLAGS" == "1" ]; then
 				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
 						printf "${GREEN}$i: $line\n"
@@ -115,7 +124,8 @@ if [ "$RUN" == "1" ]; then
 			i=$((i + 1))
 			sleep 0.07
 		done
-		printf "\n${GREEN}Conclusion : $(cat tmp/tmp | wc -l | xargs)/$(cat $FILE_TO_READ | wc -l | xargs) tests passed\n"
+		printf "\n${GREEN}Conclusion : $(cat tmp/tmp | wc -l | xargs)/$(cat $FILE_TO_READ | wc -l | xargs) tests passed.\n"
+		printf "$(cat file_tests/tofix_tests.txt | wc -l | xargs) wrong tests were added in \"${YELLOW}./file_tests/tofix_tests.txt${GREEN}\".\n"
 		rm -rf tmp/tmp
 fi
 rm -f a bar file foo je lol ls suis 'test' teststicked testyosticked

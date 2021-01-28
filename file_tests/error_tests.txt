@@ -11,5 +11,4 @@ wtf
 hi im thallard
 nice to meet you
 if thoses tests are green
-then
-your minishell is perfect
+then your minishell is perfect

@@ -30,4 +30,3 @@ exit -4
 exit wrong
 exit wrong_command
 exit something
-
