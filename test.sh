@@ -6,11 +6,12 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/28 15:09:34 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/28 15:31:58 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 GREEN='\033[0;32m'
+GREENB='\033[1;32m'
 RED='\033[0;31m'
 REDB='\033[1;31m'
 BLANK='\033[0m'
@@ -38,7 +39,6 @@ if [ "$1" == "help" ]; then
     printf "    flag ${YELLOW}[--diff]${BLANK} allow when its enabled to see the difference(s) between your minishell results and real bash ones, without this flag enabled you will only see if the test is correct.\n"
 	printf "    flag ${YELLOW}[--fast] ${BLANK}or ${YELLOW}[-f] ${BLANK}allow to increase the delay between each test.\n"
 	printf "    flag ${YELLOW}[--valgrind] ${BLANK}or ${YELLOW}[-v] ${BLANK} enable leaks checking (Valgrind works only on Linux OS, see the repository of gurival- : https://github.com/grouville/valgrind_42, it's an effiency tool which allow to use Valgrind on your minishell easily.\n"
-
     exit
 fi
 
@@ -60,7 +60,7 @@ fi
 if [ "$RUN" == "1" ]; then
 	# Read inputs files for cat command
 	if [ -z "$1" ]; then
-		printf "\033[1;32mYou choose to run all tests without ${YELLOW}[--diff]\033[1;32m (differences between minishell and bash results).${BLANK}\n\n"
+		printf "${GREENB}You choose to run all tests without ${YELLOW}[--diff]${GREENB} (differences between minishell and bash results).${BLANK}\n\n"
 		FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
 		ALL=1
 		sleep 4
@@ -68,11 +68,10 @@ if [ "$RUN" == "1" ]; then
 		for var in "$@"
 		do
 			if [ "$var" == "--diff" ]; then
-				printf "\033[1;32mYou choose to run all tests.${BLANK}\n\n"
+				printf "${GREENB}You choose to run all tests.${BLANK}\n\n"
 				FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
 				DIFF_FLAGS=1
 			elif [ "$var" == "--fast" ] || [ "$var" == "-f" ]; then
-				printf "oui"
 				SPEED=0.001
 			elif [ "$var" == "--valgrind" ] || [ "$var" == "-v" ]; then
 				VALGRIND="valgrind -q --leak-check=full"
@@ -104,6 +103,11 @@ if [ "$RUN" == "1" ]; then
 		fi
 		ALL=1
 	fi
+	# Last check before main process (little message for valgrind utilisation)
+	if [[ ! -z "$VALGRIND" ]]; then
+		printf "${GREENB}You have activated ${YELLOW}[--valgrind]${GREENB} flag, care it's only work with a Linux architecture.\n"
+		sleep 2
+	fi
 	echo -n > tofix/tofix_tests.txt
 	echo -n > tmp/tmp
 	# Main process checking each line and compare minishell executable + bash results
@@ -111,6 +115,10 @@ if [ "$RUN" == "1" ]; then
 		do
 			if [ "$line" == "\n" ]; then
 				continue
+			elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ]; then
+				printf "${GREENB}${line}\n"
+				sleep 2
+				continue 
 			fi
 			# If Valgrind flags is enabled, run tests with valgrind
 			BASH_RESULT=$(echo $line | bash 2>&-)

@@ -1,21 +1,60 @@
-export ""=""
-export ''=''
-export "="="="
-export '='='='
-export TE-ST=100
-export -TEST=100
-export TEST-=100
-export TEST+=100 ; echo $TEST ; export TEST+=200 ; echo $TEST
-export TEST= ; env | grep "TEST" ; unset TEST
-export TEST="" ; env | grep "TEST" ; unset TEST
-export TEST='' ; env | grep "TEST" ; unset TEST
-export TEST=100 TEST2=100 ; env | grep "TEST" ; unset TEST TEST2
-export TEST=100 TEST1=200 ; env | grep "TEST" ; unset TEST TEST1
-export TEST="100" ; env | grep "TEST" ; unset TEST
-export TEST='"$USER"' ; env | grep "TEST" ; unset TEST
-export TEST="$USER" ; env | grep "TEST" ; unset TEST
-export TEST="$USER$USER" ; env | grep "TEST" ; unset TEST
-export TEST="'$USER'""test" ; env | grep "TEST" ; unset TEST
-export TEST="$USER" TEST1=$TEST ; env | grep "TEST" ; unset TEST
-export TEST=LOL ; export TEST+=LOL ; env | grep "TEST" ; unset TEST
-export TEST=LOL ; export TEST-=LOL ; env | grep "TEST" ; unset TEST
+echo "bonjour"
+echo 'bonjour'
+echo -n bonjour
+echo -nn bonjour
+echo -n -n -n bonjour
+echo -n -n -n bonjour
+echo "-n" bonjour
+echo -n"-n" bonjour
+echo "-nnnn" bonjour
+echo "-n -n -n"-n bonjour
+echo "-n '-n'" bonjour
+echo ~
+echo "~"
+echo '~'
+echo ~/123
+echo ~/123/456
+echo "$USER"
+echo "'$USER'"
+echo " '$USER' "
+echo text"$USER"
+echo text"'$USER'" ' $USER '
+echo "text" "$USER" "$USER"
+echo ' $USER '
+echo text "$USER" "$USER"text
+echo ''''''''''$USER''''''''''
+echo """"""""$USER""""""""
+echo $USER'$USER'text oui oui oui oui $USER oui $USER ''
+echo $USER '' $USER $USER '' $USER '' $USER -n $USER
+echo ' ' ' '
+echo '" ' " """
+echo \" \" \" \"\"\" \'\'\'
+echo "$USER""$USER""$USER"
+echo text"$USER"test
+echo '$USER' "$USER" "text ' text"
+echo '$USER'
+echo $USER " "
+echo "$USER""Users/$USER/file""'$USER'"'$USER'
+echo "$USER$USER$USER"
+echo '$USER'"$USER"'$USER'
+echo '"$USER"''$USER'"""$USER"
+echo " $USER "'$PWD'
+echo " $USER $ "'$PWD'
+echo $USER $123456789USER $USER123456789
+echo $USER $9999USER $8888USER $7777USER
+echo $USER $USER9999 $USER8888 $USER7777 "$USER"
+echo "$USER=12$USER"
+echo "$9USER" "'$USER=12$SOMETHING'"
+echo $PWD/file
+echo "$PWD/file"
+echo "text" "text$USER" ... "$USER"
+echo $PWD; echo $OLDPWD; cd ' '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd //; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' /'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' / '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' /'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' / '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' // '; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd //home; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' //home'; pwd; echo $PWD; echo $OLDPWD
+echo $PWD; echo $OLDPWD; cd ' //home '; pwd; echo $PWD; echo $OLDPWD

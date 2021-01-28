@@ -1,3 +1,4 @@
+- Echo part : For next tests, you will need : \\\033[0;33mcd, pwd and semicolons (;).
 echo
 echo echo
 eCho 
