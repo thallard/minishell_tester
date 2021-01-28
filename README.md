@@ -3,12 +3,6 @@
 ## Overview
 
 
-## Installation
-
-```bash
-git clone https://github.com/thallard/minishell_tester
-```
-
 ## Prerequis 
 You must have the below part in your main of your minishell, otherwise you will can't use the tester.
 If you don't understand this part or have some troubles, do not hesitate to contact me on Discord or Slack : 
@@ -18,9 +12,11 @@ If you don't understand this part or have some troubles, do not hesitate to cont
 int main(int argc, char **argv)
 {
   // Your code...
-  if (argc >= 3 && !ft_strncmp(argv[1], "-c", 3))
+  if (argc >= 3 && !ft_strncmp(argv[1], "-c", 3)) // Check if the -c flag is enabled
     ft_launch_minishell(argv[2]);
-    // Above this is the function that normally launch your minishell, instead of reading line with a get_next_line or a read on fd 0, you just have to get the argv[2] content and execute it.
+    // Above this is the function that normally launch your minishell, instead 
+    // of reading line with a get_next_line or a read() on fd 0, you just have to get
+    // the argv[2] (which contains the content) and execute it.
   // Your code...
   return (0);
 }
@@ -30,7 +26,7 @@ int main(int argc, char **argv)
 
 
 ## Contact
-If you have any ideas to improve this tester or if you are a bug hunter, feel free to send a pm on Discord : hosrAAA#6964
+If you have any ideas to improve this tester or if you are a bug hunter, feel free to send a PM on Discord : hosrAAA#6964
 
 https://profile.intra.42.fr/users/thallard
 https://profile.intra.42.fr/users/bjacob
