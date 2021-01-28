@@ -11,7 +11,7 @@ git clone https://github.com/thallard/minishell_tester
 
 ## Prerequis
 You must have the below part in your main of your minishell, otherwise you will can't use the tester : 
-```c
+```cpp
 // argv[3] will contains the -c that tester will send it
 // argv[2] will contains the content of the line for example "echo $USER ; ls -la"
 int main(int argc, char **argv)
