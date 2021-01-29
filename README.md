@@ -2,6 +2,17 @@
 
 ## Overview
 
+
+- ``Built-in (echo, export, cd, unset, pwd & exit)``
+- ``All separators (pipes and semicolons)``
+- ``Redirection (<, >, >>) and redirection of stderror (2>/dev/null)``
+- ``Environment variables (there are complex tests with these)``
+- ``Quotes, escaping quotes and escaping characters``
+- ``Leaks with Valgrind``
+- ``Give differences between your minishell results and bash ones with exit status ($?)``
+
+
+
 ![](tmp/preview.gif)
 
 ## Get started
