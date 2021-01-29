@@ -25,6 +25,10 @@ int main(int argc, char **argv)
 
 ## Usage
 
+```bash
+bash test.sh all 
+```
+![](tmp/help.png)
 
 ## Contact
 If you have any ideas to improve this tester or if you are a bug hunter, feel free to send a PM on Discord : hosrAAA#6964
