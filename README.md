@@ -4,8 +4,8 @@
 
 ![](tmp/preview.gif)
 
-## Prerequis 
-You must have the below part in your main of your minishell, otherwise you will can't use the tester.
+## Get started
+First of all, you must have the below part in your main of your minishell, otherwise you will can't use the tester.
 If you don't understand this part or have some troubles, do not hesitate to contact me on Discord or Slack : 
 ```cpp
 // argv[3] will contains the -c flag that tester will send it, you have to check it
@@ -25,10 +25,12 @@ int main(int argc, char **argv)
 
 ## Usage
 
+```bash
+bash test.sh all 
+```
+![](tmp/help.png)
 
 ## Contact
 If you have any ideas to improve this tester or if you are a bug hunter, feel free to send a PM on Discord : hosrAAA#6964
 
 https://profile.intra.42.fr/users/thallard
-
-https://profile.intra.42.fr/users/bjacob
