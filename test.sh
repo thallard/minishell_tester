@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/28 15:31:58 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/01/29 13:28:57 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ fi
 if [ "$RUN" == "1" ]; then
 	# Read inputs files for cat command
 	if [ -z "$1" ]; then
-		printf "${GREENB}You choose to run all tests without ${YELLOW}[--diff]${GREENB} (differences between minishell and bash results).${BLANK}\n\n"
+		printf "${GREENB}You have chosen  to run all tests without ${YELLOW}[--diff]${GREENB} (differences between minishell and bash results).${BLANK}\n\n"
 		FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
 		ALL=1
 		sleep 4
@@ -68,7 +68,7 @@ if [ "$RUN" == "1" ]; then
 		for var in "$@"
 		do
 			if [ "$var" == "--diff" ]; then
-				printf "${GREENB}You choose to run all tests.${BLANK}\n\n"
+				printf "${GREENB}You have chosen  to run all tests.${BLANK}\n\n"
 				FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
 				DIFF_FLAGS=1
 			elif [ "$var" == "--fast" ] || [ "$var" == "-f" ]; then
