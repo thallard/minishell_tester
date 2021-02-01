@@ -2,7 +2,7 @@
 
 ## Overview
 
-All features of this tester is :
+All features of this tester are :
 - ``Built-in (echo, export, cd, unset, pwd & exit)``
 - ``All separators (pipes and semicolons)``
 - ``Redirection (<, >, >>) and redirection of stderror (2>/dev/null)``
