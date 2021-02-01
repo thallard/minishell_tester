@@ -38,9 +38,14 @@ int main(int argc, char **argv)
 
 To show all explained flags and global usage of the script :
 ```bash
-bash test.sh all 
+bash test.sh help 
 ```
 ![](tmp/help.png)
+```bash
+bash test.sh [--diff] [--fast] [--valgrind] <name_file> ...
+bash test --diff --fast echo export pipes 
+// Will run echo, export and pipes tests with printing differences between your minishell and bash ones, with --fast activated, tester will test more than 30 tests per second
+```
 
 ## Contact
 If you have any ideas to improve this tester or if you are a bug hunter, feel free to send a PM on Discord : hosrAAA#6964
