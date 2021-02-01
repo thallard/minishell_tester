@@ -43,8 +43,9 @@ bash test.sh help
 ![](tmp/help.png)
 ```bash
 bash test.sh [--diff] [--fast] [--valgrind] <name_file> ...
-bash test --diff --fast echo export pipes 
-// Will run echo, export and pipes tests with printing differences between your minishell and bash ones, with --fast activated, tester will test more than 30 tests per second
+bash test --diff --fast echo redirection pipes 
+// Will run echo, redirection and pipes tests with printing differences between your minishell and bash ones, 
+with --fast activated, tester will test more than 30 tests per second
 ```
 
 ## Contact
