@@ -1,5 +1,3 @@
-# minishell_tester
-
 ## Overview
 
 All features of this tester are :
@@ -44,6 +42,11 @@ bash test.sh help
 Global use of the tester (To see utility of each flags check the screenshot above) :
 ```bash
 bash test.sh [--diff] [--fast] [--valgrind] <name_file> ...
+```
+Some examples of how to use it :
+```bash
+bash test.sh --diff all
+bash test.sh --diff --fast echo export unset
 ```
 
 ## Contact
