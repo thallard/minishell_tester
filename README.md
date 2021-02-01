@@ -20,7 +20,7 @@ First of all, you must have the below part in your main of your minishell, other
 If you don't understand this part or have some troubles, do not hesitate to contact me on Discord or Slack : 
 ```cpp
 // argv[3] will contains the -c flag that tester will send it, you have to check it
-// argv[2] will contains the content of the line for example "echo $USER ; ls -la" 
+// argv[2] will contains the content of the line for example "echo bonjour ; ls -la" 
 int main(int argc, char **argv)
 {
   // Your code...
@@ -36,6 +36,7 @@ int main(int argc, char **argv)
 
 ## Usage
 
+To show all explained flags and global usage of the script :
 ```bash
 bash test.sh all 
 ```
