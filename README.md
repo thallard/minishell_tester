@@ -9,13 +9,13 @@ All features of this tester are :
 - ``Environment variables (there are complex tests with these)``
 - ``Quotes, escaping quotes and escaping characters``
 - ``Leaks with Valgrind``
-- ``Give differences between your minishell results and bash ones with exit status ($?)``
+- ``Print differences between your minishell results and bash ones with exit status ($?)``
 
 
 
 ![](tmp/preview.gif)
 
-## Get started
+## Get started (VERY IMPORTANT)
 First of all, you must have the below part in your main of your minishell, otherwise you will can't use the tester.
 If you don't understand this part or have some troubles, do not hesitate to contact me on Discord or Slack : 
 ```cpp
@@ -41,11 +41,9 @@ To show all explained flags and global usage of the script :
 bash test.sh help 
 ```
 ![](tmp/help.png)
+Global use of the tester (To see utility of each flags check the screenshot above) :
 ```bash
 bash test.sh [--diff] [--fast] [--valgrind] <name_file> ...
-bash test --diff --fast echo redirection pipes 
-// Will run echo, redirection and pipes tests with printing differences between your minishell and bash ones, 
-with --fast activated, tester will test more than 30 tests per second
 ```
 
 ## Contact
