@@ -1,6 +1,7 @@
 - Export part : For next tests, you will need : \\\033[0;33munset, env, echo, pipes, execve and semicolons (;).
+env | grep "_="
 export | grep "SHLVL"
-export | grep "_="
+export | grep "SHLVL"
 export $? ; echo $?
 export TEST ; echo $TEST
 export TEST= ; echo $TEST

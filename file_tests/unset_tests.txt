@@ -1,10 +1,10 @@
 - Unset part : For next tests, you will need : \\\033[0;33m export, echo, cd, execve and semicolons (;).
 unset
+export TEST=100 ; echo $TEST ; unset TEST
 unset doesntexist
 unset PWD
-unset $PWD ; echo $PWD
-unset $OLDPWD ; echo $PWD
-export TEST=100 ; echo $TEST ; unset TEST
+unset PWD ; echo $PWD
+unset OLDPWD ; echo $PWD
 unset TES\\\\T
 unset TES;T
 unset TES|T
@@ -33,7 +33,6 @@ unset pwd
 unset cd
 unset unset
 unset sudo
-unset rm -rf -y *
 unset TES^T
 unset TES!T
 unset TES\~T

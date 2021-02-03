@@ -68,20 +68,14 @@ echo "$9USER" "'$USER=12$SOMETHING'"
 echo $PWD/file
 echo "$PWD/file"
 echo "text" "text$USER" ... "$USER"
+echo "text" > file ; cat file ; rm -f file
 echo text$USER > file $USER ; cat file ; rm -f file
 echo "text"$USER > file ; cat file ; rm -f file
 echo $USER"text""'$USER'""$USER" > file >> file2 $USER ; cat file file2 ; rm -f file file2
 echo '$USER'"123$USER123""text" > file ; cat file ; rm -f file
 echo "text" > file >> file1 ; cat file file1 ; rm -f file file1
 echo "text" > file text2> file1; cat file file1; rm -f file file1
-echo "text" > file ; cat file ; rm -f file
-echo "text" > file ; cat file ; rm -f file
-echo "text" > file ; cat file ; rm -f file
 echo $USER  $USER7777"text"$USER $USER9999 > file $USER $USER9999 ; cat file ; rm -f file
-echo "text" > file ; cat file ; rm -f file
-echo "text" > file ; cat file ; rm -f file
-echo "text" > file ; cat file ; rm -f file
-echo "text" > file ; cat file ; rm -f file
 echo $PWD; echo $OLDPWD; cd .; pwd; echo $PWD; echo $OLDPWD                                                        
 echo $PWD; echo $OLDPWD; cd ..; pwd; echo $PWD; echo $OLDPWD                                                       
 echo $PWD; echo $OLDPWD; cd ../..; pwd; echo $PWD; echo $OLDPWD                                                    

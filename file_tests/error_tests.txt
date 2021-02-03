@@ -36,6 +36,8 @@ echo -n |
 echo -n ;
 echo ;
 echo something ;
+rm -f something
+cat something
 | echo -n oui
 ; echo -n oui
 trying to destroy your minishell ; echo hello

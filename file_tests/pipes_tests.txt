@@ -1,7 +1,17 @@
 - Pipes part : For next tests, you will need : \\\033[0;33mall built-in, redirections (normal and stderror) and semicolons (;).
+env | grep "_="
+env | grep "SHLVL"
+echo oui | cat -e
+cat Makefile | grep "FLAGS"
+cat Makefile | cat -e | cat -e
+cat Makefile | grep "FLAGS" | grep "FLAGS" | cat -e
+export TEST=123 | cat -e | cat -e ; echo $TEST
+unset TEST | cat -e
 echo test | cat -e | cat -e | cat -e
 whereis ls | cat -e | cat -e > test
 echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
 ls -la | grep "."
 whereis grep > tmp/file ; cat tmp/file ; ls -la tmp/file | grep "grep"
 whereis grep > tmp/file ; cat tmp/file ; ls -la tmp/file
+ls -la > tmp/file ; cat < tmp/file tmp/doesntexist 2>/dev/null
+ls -la > tmp/file ; cat < tmp/file tmp/doesntexist

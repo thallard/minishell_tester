@@ -1,6 +1,9 @@
 - Redirection part : For next tests, you will need : \\\033[0;33m echo, cd, execve and semicolons (;).
-echo text > tmp/file text2 > tmp/file1
-echo text > tmp/file ; cat tmp/file 
+ls -la > tmp/file ; cat tmp/file
+echo text > tmp/file text2 > tmp/file1 ; cat tmp/file tmp/file1
+echo text > tmp/file ; cat tmp/file
+echo text > tmp/file ; cat tmp/file
+echo text > $PWD/tmp/file text2 ; cat $PWD/tmp/file
 echo text$USER > tmp/file $USER ; cat tmp/file 
 echo "text"$USER > tmp/file ; cat tmp/file 
 echo $USER"text""'$USER'""$USER" > tmp/file >> tmp/file2 $USER ; cat tmp/file tmp/file2 
@@ -16,8 +19,19 @@ cat < ls > ls
 ls -la > tmp/file ; cat tmp/file
 echo something > > tmp/file ; cat < tmp/file
 echo something > tmp/file ; cat tmp/file
+echo something > tmp/file ; >> tmp/file ls -la ; cat tmp/file
+echo something > tmp/file ; cd doesntexist 2>/dev/null ; cat tmp/file
 cd doesntexit 2>/dev/null
 cat doesntexit 2>/dev/null
 rm -f doesntexit 2>/dev/null
 > tmp/file echo something ; cat tmp/file
-echo something > tmp/file ; >> tmp/file ls -la ; cat tmp/file
+> tmp/file cat test.sh
+> tmp/file echo "something" "something2" ; > tmp/file cd wtf 2>/dev/null ; cat tmp/file
+> tmp/file cd wtf ; cat tmp/file
+>> tmp/file cd wtf 2>/dev/null ; cat tmp/file
+> tmp/file cd wtf 2>/dev/null ; cat tmp/file
+cat < README.md
+cat < README.md test.sh
+cat < README.md | wc -l | xargs
+cat < README.md > tmp/file ; cat tmp/file | wc -l | xargs > tmp/file1 ; cat tmp/file1
+cat < README.md doesntexist 2>/dev/null > tmp/file ; cat tmp/file
