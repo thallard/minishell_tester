@@ -1,6 +1,6 @@
 ## Overview
 
-All features of this tester are :
+The tester contains these features :
 - ``Built-in (echo, export, cd, unset, pwd & exit)``
 - ``All separators (pipes and semicolons)``
 - ``Redirection (<, >, >>) and redirection of stder (2>/dev/null)``
