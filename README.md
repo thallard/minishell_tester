@@ -17,7 +17,7 @@ The tester contains these features :
 
 ## Get started (VERY IMPORTANT)
 First of all, you must have the below part in your main of your minishell, otherwise you won't be able to use the tester.
-If you don't understand this part or have some troubles, do not hesitate to contact me on Discord or Slack : 
+If you don't understand this part or you're having some troubles, do not hesitate to contact me on Discord or Slack :
 ```cpp
 // argv[3] will contains the -c flag that tester will send it, you have to check it
 // argv[2] will contains the content of the line for example "echo bonjour ; ls -la" 
