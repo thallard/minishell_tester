@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/01/29 15:21:54 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/02/03 10:38:23 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ YELLOW='\033[0;33m'
 # ----------------------- MODIFY THESE VARIABLES ----------------------------
 # Please modify this variable if your Makefile or your minishell executable is not found
 PATH_Makefile=..
-PATH_executable=./minishell
+PATH_executable=..
 
 # Variables
 i=1
@@ -44,15 +44,15 @@ fi
 
 # Check if Makefile and minishell executable exists in the parent folder
 if [[ -f "$PATH_Makefile/Makefile" ]]; then
-	make all -C ..
+	make all -C $PATH_Makefile
 else
 	printf "\033[1;31mError : Makefile doesn't found with the path : \"$PATH_Makefile\", please be sure to change the variable \"PATH_Makefile\" or to move your Makefile in the right folder.\n"
 	RUN=0
 fi
-if [[ -f "$PATH_executable" ]]; then
-	cp ../minishell . 
+if [[ -f "$PATH_executable/minishell" ]]; then
+	cp $PATH_executable/minishell . 
 else
-	printf "\033[1;31mError : Executable \"minishell\" doesn't found with the path : \""$PATH_executable"\", please be sure to change the variable \"PATH_executable\" or to move your executable in the right folder.\n"
+	printf "\033[1;31mError : Executable \"minishell\" doesn't found with the path : \""$PATH_executable/minishell"\", please be sure to change the variable \"PATH_executable\" or to move your executable in the right folder.\n"
 	RUN=0
 fi
 
@@ -68,8 +68,6 @@ if [ "$RUN" == "1" ]; then
 		for var in "$@"
 		do
 			if [ "$var" == "--diff" ]; then
-				printf "${GREENB}You have chosen  to run all tests.${BLANK}\n\n"
-				FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
 				DIFF_FLAGS=1
 			elif [ "$var" == "--fast" ] || [ "$var" == "-f" ]; then
 				SPEED=0.001
@@ -117,6 +115,7 @@ if [ "$RUN" == "1" ]; then
 				continue
 			elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ]; then
 				printf "${GREENB}${line}\n"
+				i=$((i + 1))
 				sleep 2
 				continue 
 			fi

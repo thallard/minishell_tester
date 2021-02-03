@@ -6,6 +6,10 @@ echo | |
 ;
 |
 >
+~
+<<
+/Users
+ 
 qewew
 wtf
 hi im thallard

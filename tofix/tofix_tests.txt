@@ -1,4 +1,0 @@
-if these tests are green
-then your minishell is perfect
-exit 9223372036854775808
-exit -9223372036854775810
