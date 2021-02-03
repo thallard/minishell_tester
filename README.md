@@ -51,6 +51,6 @@ bash test.sh --diff --fast echo export unset
 ```
 
 ## Contact
-If you have any ideas to improve this tester or if you are a bug hunter, feel free to send a PM on Discord : hosrAAA#6964
+If you have any ideas on how to improve this tester or if you are a bug hunter, feel free to send a PM on Discord : hosrAAA#6964
 
 https://profile.intra.42.fr/users/thallard
