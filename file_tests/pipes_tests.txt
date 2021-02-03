@@ -2,6 +2,14 @@
 env | grep "_="
 env | grep "SHLVL"
 echo oui | cat -e
+echo oui | echo non | echo something | grep oui
+echo oui | echo non | echo something | grep non
+echo oui | echo non | echo something | grep something
+ifconfig | grep ":"
+ifconfig | grep nothing
+whoami | grep $USER
+whoami | grep $USER > tmp/file; cat tmp/file
+whoami | cat -e | cat -e > tmp/file ; cat tmp/file ; echo $USER
 cat Makefile | grep "FLAGS"
 cat Makefile | cat -e | cat -e
 cat Makefile | grep "FLAGS" | grep "FLAGS" | cat -e

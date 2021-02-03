@@ -1,5 +1,6 @@
-- Redirection part : For next tests, you will need : \\\033[0;33m echo, cd, execve and semicolons (;).
+- Redirection part : For next tests, you will need : \\\033[0;33m echo, cd, execve, pipes and semicolons (;).
 ls -la > tmp/file ; cat tmp/file
+ifconfig | grep "192.168" > tmp/file ; cat tmp/file
 echo text > tmp/file text2 > tmp/file1 ; cat tmp/file tmp/file1
 echo text > tmp/file ; cat tmp/file
 echo text > tmp/file ; cat tmp/file
@@ -13,9 +14,15 @@ echo "text" > tmp/file text2> tmp/file1; cat tmp/file tmp/file1
 echo "text" > tmp/file text2 ; cat tmp/file 
 echo "text" > tmp/file text ; cat tmp/file 
 echo "text" > tmp/file ; cat tmp/file
+echo "text" > tmp/file ; cat tmp/file ; rm -f tmp/file
+echo text$USER > tmp/file $USER ; cat tmp/file ; rm -f tmp/file
+echo "text"$USER > tmp/file ; cat tmp/file ; rm -f tmp/file
+echo $USER"text""'$USER'""$USER" > tmp/file >> tmp/file2 $USER ; cat tmp/file tmp/file2 ; rm -f tmp/file tmp/file2
+echo '$USER'"123$USER123""text" > tmp/file ; cat tmp/file ; rm -f tmp/file
+echo "text" > tmp/file >> tmp/file1 ; cat tmp/file tmp/file1 ; rm -f tmp/file tmp/file1
+echo "text" > tmp/file text2> tmp/file1; cat tmp/file tmp/file1; rm -f tmp/file tmp/file1
+echo $USER  $USER7777"text"$USER $USER9999 > tmp/file $USER $USER9999 ; cat tmp/file ; rm -f tmp/file
 echo $USER  $USER7777"text"$USER $USER9999 > tmp/file $USER $USER9999 ; cat tmp/file
-cat < ls
-cat < ls > ls
 ls -la > tmp/file ; cat tmp/file
 echo something > > tmp/file ; cat < tmp/file
 echo something > tmp/file ; cat tmp/file
