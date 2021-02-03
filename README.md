@@ -3,7 +3,7 @@
 The tester contains these features :
 - ``Built-in (echo, export, cd, unset, pwd & exit)``
 - ``All separators (pipes and semicolons)``
-- ``Redirection (<, >, >>) and redirection of stder (2>/dev/null)``
+- ``Redirection (<, >, >>) and redirection of stderr (2>/dev/null)``
 - ``Environment variables (there are complex tests with these)``
 - ``Quotes, escaping quotes and escaping characters``
 - ``Leaks with Valgrind**``
