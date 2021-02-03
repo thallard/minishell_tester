@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/03 16:17:23 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/02/03 17:38:16 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,13 @@ fi
 if [[ -f "$PATH_Makefile/Makefile" ]]; then
 	{
 		make all -C $PATH_Makefile
-	} > /dev/null
-	printf "${GREENB}Makefile successfully created, your executable minishell is ready.\n"
+	} > tmp/makefile
+	if [ -z "$(cat tmp/makefile | grep error)" ]; then
+		printf "${GREENB}Makefile successfully created, your executable minishell is ready.\n"
+	else 
+		printf "\033[1;31mError : Makefile can't compile, check above errors.\n"
+		RUN=0
+	fi
 else
 	printf "\033[1;31mError : Makefile doesn't found with the path : \"$PATH_Makefile\", please be sure to change the variable \"PATH_Makefile\" or to move your Makefile in the right folder.\n"
 	RUN=0
