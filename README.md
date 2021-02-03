@@ -44,7 +44,7 @@ Global use of the tester (To see utility of each flags check the screenshot abov
 ```bash
 bash test.sh [--diff] [--fast] [--valgrind] <name_file> ...
 ```
-Some examples of how to use it :
+Some examples on how to use it :
 ```bash
 bash test.sh --diff all
 bash test.sh --diff --fast echo export unset
