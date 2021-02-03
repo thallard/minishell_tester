@@ -1,4 +1,7 @@
 - Export part : For next tests, you will need : \\\033[0;33munset, env, echo, pipes, execve and semicolons (;).
+export | grep "SHLVL"
+export | grep "_="
+export $? ; echo $?
 export TEST ; echo $TEST
 export TEST= ; echo $TEST
 export TEST=123 ; echo $TEST
@@ -23,6 +26,43 @@ export TEST
 export ""=""
 export TES=T=""
 export TE+S=T=""
+export TES\\\\T=123
+export TES;T=123
+export TES|T=123
+export TES.T=123
+export TES\\\$T=123
+export TES\\\\T
+export TES;T=123
+export TES|T=123
+export TES.T=123
+export TES&T=123
+export TES+T=123
+export TES=T=123
+export TES}T=123
+export TES{T=123
+export TES-T=123
+export -TEST=123
+export _TEST=123
+export TES_T=123
+export TEST_=123
+export TE*ST=123
+export TES#T=123
+export TES@T=123
+export TES!T=123
+export TES$?T=123
+export =============123
+export +++++++=123
+export ________=123
+export export
+export echo
+export pwd
+export cd
+export export
+export unset
+export sudo
+export TES^T=123
+export TES!T=123
+export TES\~T=123
 export TEST+=100 ; echo $TEST ; export TEST+=200 ; echo $TEST
 export TEST=123 0$TEST=0123 ; echo $TEST
 export TEST ; env | grep "TEST" ; unset TEST

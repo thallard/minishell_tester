@@ -1,11 +1,37 @@
-cd / ; cd Users ; pwd ; cd .. ; pwd
 cd '/etc' ; pwd
 cd '/var' ; pwd
-env | grep "_="
+cd .. ; unset OLDPWD ; cd $OLDPWD ; pwd
+cd .. ; unset PWD ; cd $PWD ; pwd
+.
+..
 exit 9223372036854775808
-exit -9223372036854775810
+export | grep "_="
 export TE;ST=100
 export TE|ST=100
 export -TEST=100
-echo $USER"text""'$USER'""$USER" > tmp/file >> tmp/file2 $USER ; cat tmp/file tmp/file2
-echo "text" > tmp/file >> tmp/file1 ; cat tmp/file tmp/file1
+export TES;T=123
+export TES|T=123
+export TES.T=123
+export TES;T=123
+export TES|T=123
+export TES.T=123
+export TES&T=123
+export TES}T=123
+export TES{T=123
+export -TEST=123
+export TE*ST=123
+export TES#T=123
+export TES^T=123
+export TES~T=123
+echo something > tmp/file ; >> tmp/file ls -la ; cat tmp/file- Unset part : For next tests, you will need : \033[0;33m export, echo, cd, execve and semicolons (;).
+unset TES.T
+unset TES&T
+unset TES=T
+unset TES}T
+unset TES{T
+unset -TEST
+unset TE*ST
+unset TES#T
+unset ============
+unset TES^T
+unset TES~T

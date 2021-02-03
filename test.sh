@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/03 14:07:58 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/02/03 14:14:39 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,6 +129,16 @@ if [ "$RUN" == "1" ]; then
 			# If Valgrind flags is enabled, run tests with valgrind
 			BASH_RESULT=$(echo $line | bash 2>&-)
 			BASH_EXIT=$?
+			# Remove temp files if they exists
+			if [ -f tmp/file ]; then
+				rm -f tmp/file
+			fi
+			if [ -f tmp/file1 ]; then
+				rm -f tmp/file1
+			fi
+			if [ -f tmp/file2 ]; then
+				rm -f tmp/file2
+			fi
 			MINISHELL_RESULT=$(echo $line | $VALGRIND ./minishell 2>&-)
 			MINISHELL_EXIT=$?
 			if [ "$DIFF_FLAGS" == "1" ]; then
@@ -155,16 +165,7 @@ if [ "$RUN" == "1" ]; then
 			fi
 			i=$((i + 1))
 			sleep $SPEED
-			# Remove temp files if they exists
-			if [ -f tmp/file ]; then
-				rm -f tmp/file
-			fi
-			if [ -f tmp/file1 ]; then
-				rm -f tmp/file1
-			fi
-			if [ -f tmp/file2 ]; then
-				rm -f tmp/file2
-			fi
+		
 		done
 		printf "\n${GREEN}Conclusion : $(cat tmp/tmp | wc -l | xargs)/$(cat $FILE_TO_READ | wc -l | xargs) tests passed.\n"
 		printf "$(cat tofix/tofix_tests.txt | wc -l | xargs) wrong tests were added in \"${YELLOW}./tofix/tofix_tests.txt${GREEN}\".\n"

@@ -5,6 +5,8 @@ eCho
 eChO
 eCHO
 ECHO
+echo rhobebou
+echo stop barking
 echo "bonjour"
 echo bonjour
 echo 'bonjour'
@@ -54,6 +56,7 @@ echo " $USER  \$ "'$PWD'
 echo $USER=4
 echo $USER=thallard
 echo $USER
+echo $?
 echo $USER213
 echo $USER$12USER$USER=4$USER12
 echo $USER $123456789USER $USER123456789

@@ -1,5 +1,0 @@
-enV | grep "SHLVL"
-eNV | grep "SHLVL"
-ENV | grep "SHLVL"
-env | grep "_="
-env | grep "SHLVL"
