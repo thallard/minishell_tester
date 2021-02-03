@@ -16,7 +16,7 @@ All features of this tester are :
 </p>
 
 ## Get started (VERY IMPORTANT)
-First of all, you must have the below part in your main of your minishell, otherwise you will can't use the tester.
+First of all, you must have the below part in your main of your minishell, otherwise you won't be able to use the tester.
 If you don't understand this part or have some troubles, do not hesitate to contact me on Discord or Slack : 
 ```cpp
 // argv[3] will contains the -c flag that tester will send it, you have to check it
