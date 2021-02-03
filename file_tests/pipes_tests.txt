@@ -1,1 +1,4 @@
+- Pipes part : For next tests, you will need : \\\033[0;33mall built-in, redirections (normal and stderror) and semicolons (;).
 echo test | cat -e | cat -e | cat -e
+whereis ls | cat -e | cat -e > test
+echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e

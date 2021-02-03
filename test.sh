@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/03 11:25:03 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/02/03 14:07:58 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ if [ "$RUN" == "1" ]; then
 		printf "${GREENB}You have chosen  to run all tests without ${YELLOW}[--diff]${GREENB} (differences between minishell and bash results).${BLANK}\n\n"
 		FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
 		ALL=1
-		sleep 4
+		sleep 2
 	else
 		for var in "$@"
 		do
@@ -116,10 +116,14 @@ if [ "$RUN" == "1" ]; then
 		do
 			if [ "$line" == "\n" ]; then
 				continue
-			elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ]; then
-				printf "${GREENB}${line}\n"
+			elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ] && [ "$SPEED" == "0.09" ]; then
+				printf "\n${GREENB}${line}\n"
 				echo $line >> tmp/tmp
-				sleep 2
+				sleep 1
+				continue 
+			elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ] && [ "$SPEED" == "0.001" ]; then
+				printf "\n${GREENB}${line}\n"
+				echo $line >> tmp/tmp
 				continue 
 			fi
 			# If Valgrind flags is enabled, run tests with valgrind
@@ -151,9 +155,19 @@ if [ "$RUN" == "1" ]; then
 			fi
 			i=$((i + 1))
 			sleep $SPEED
+			# Remove temp files if they exists
+			if [ -f tmp/file ]; then
+				rm -f tmp/file
+			fi
+			if [ -f tmp/file1 ]; then
+				rm -f tmp/file1
+			fi
+			if [ -f tmp/file2 ]; then
+				rm -f tmp/file2
+			fi
 		done
 		printf "\n${GREEN}Conclusion : $(cat tmp/tmp | wc -l | xargs)/$(cat $FILE_TO_READ | wc -l | xargs) tests passed.\n"
 		printf "$(cat tofix/tofix_tests.txt | wc -l | xargs) wrong tests were added in \"${YELLOW}./tofix/tofix_tests.txt${GREEN}\".\n"
 		rm -rf tmp/tmp
 fi
-rm -f a bar file foo je lol ls suis 'test' teststicked testyosticked
+rm -f a bar file tmp/file1 tmp/file2 foo je lol ls suis 'test' teststicked testyosticked

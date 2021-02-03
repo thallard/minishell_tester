@@ -1,3 +1,4 @@
+- CD part : For next tests, you will need : \\\033[0;33mecho, pwd, redirections (normal and stderror) and semicolons (;).
 cd .. ; pwd
 cd /Users ; pwd
 cd ; pwd
@@ -7,3 +8,7 @@ cd ////// ; pwd
 cd ./././ ; pwd
 pwd ; cd . ; pwd
 cd / ; cd Users ; pwd ; cd .. ; pwd
+cd '/////' 2>/dev/null
+cd '/etc' ; pwd
+cd '/var' ; pwd
+cd "$PWD/file_tests" ; pwd

@@ -1,0 +1,11 @@
+cd / ; cd Users ; pwd ; cd .. ; pwd
+cd '/etc' ; pwd
+cd '/var' ; pwd
+env | grep "_="
+exit 9223372036854775808
+exit -9223372036854775810
+export TE;ST=100
+export TE|ST=100
+export -TEST=100
+echo $USER"text""'$USER'""$USER" > tmp/file >> tmp/file2 $USER ; cat tmp/file tmp/file2
+echo "text" > tmp/file >> tmp/file1 ; cat tmp/file tmp/file1

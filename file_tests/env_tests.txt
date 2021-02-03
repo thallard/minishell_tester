@@ -1,13 +1,5 @@
-export | grep "SHLVL"
-  export TEST
-export ==========
-export 1TEST=
-export TEST
-export ""=""
-export TES=T=""
-export TE+S=T=""
-export _________________= ; echo $_________________
-export TEST=LOL ; echo $TEST 
-export TEST=LOL ; echo $TEST$TEST$TEST=lol$TEST
-export TEST=LOL; export TEST+=LOL ; echo $TEST
-export TEST="ls       -l     - a" ; echo $TEST
+enV | grep "SHLVL"
+eNV | grep "SHLVL"
+ENV | grep "SHLVL"
+env | grep "_="
+env | grep "SHLVL"
