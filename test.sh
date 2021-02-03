@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/03 10:38:23 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/02/03 11:25:03 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,10 @@ fi
 
 # Check if Makefile and minishell executable exists in the parent folder
 if [[ -f "$PATH_Makefile/Makefile" ]]; then
-	make all -C $PATH_Makefile
+	{
+		make all -C $PATH_Makefile
+	} > /dev/null
+	printf "${GREENB}Makefile successfully created, your executable minishell is ready.\n"
 else
 	printf "\033[1;31mError : Makefile doesn't found with the path : \"$PATH_Makefile\", please be sure to change the variable \"PATH_Makefile\" or to move your Makefile in the right folder.\n"
 	RUN=0
@@ -115,7 +118,7 @@ if [ "$RUN" == "1" ]; then
 				continue
 			elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ]; then
 				printf "${GREENB}${line}\n"
-				i=$((i + 1))
+				echo $line >> tmp/tmp
 				sleep 2
 				continue 
 			fi
