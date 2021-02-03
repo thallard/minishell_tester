@@ -10,7 +10,7 @@ All features of this tester are :
 - ``Print differences between your minishell results and bash ones with exit status ($?)``
 
 ** : For Valgrind check gurival's repo : https://github.com/grouville/valgrind_42, it's a usefull tool to use Valgrind on your MacOS.
-
+<p align="center">Little peak of the tester :</p>
 <p align="center">
   <img src="tmp/preview.gif" alt="animated" />
 </p>
