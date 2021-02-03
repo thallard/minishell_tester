@@ -28,7 +28,6 @@ int main(int argc, char **argv)
     // of reading line with a get_next_line or a read() on fd 0, you just have to get
     // the argv[2] (which contains the content) and execute it.
   // Your code...
-  return (0);
 }
 ```
 
