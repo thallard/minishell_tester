@@ -32,7 +32,7 @@ int main(int argc, char **argv)
   // Your code...
 }
 ```
-And all of your return messages from exit, cd error, echo error should be print on ``STDERROR`` (on fd = 2).
+And all of your return messages from ``exit``, ``cd`` error, ``echo`` error should be print on ``STDERROR`` (on fd = 2).
 ## Usage
 
 To show all explained flags and global usage of the script :
