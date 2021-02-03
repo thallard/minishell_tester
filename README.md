@@ -3,7 +3,7 @@
 The tester contains these features :
 - ``Built-in (echo, export, cd, unset, pwd & exit)``
 - ``All separators (pipes and semicolons)``
-- ``Redirection (<, >, >>) and redirection of stderr (2>/dev/null)``
+- ``Redirection (<, >, >>) and redirection of STDERROR (2>/dev/null)``
 - ``Environment variables (there are complex tests with these)``
 - ``Quotes, escaping quotes and escaping characters``
 - ``Leaks with Valgrind**``
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
   // Your code...
 }
 ```
-
+And all of your return messages from exit, cd error, echo error should be print on ``STDERROR`` (on fd = 2).
 ## Usage
 
 To show all explained flags and global usage of the script :
