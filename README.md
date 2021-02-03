@@ -3,7 +3,7 @@
 All features of this tester are :
 - ``Built-in (echo, export, cd, unset, pwd & exit)``
 - ``All separators (pipes and semicolons)``
-- ``Redirection (<, >, >>) and redirection of stderror (2>/dev/null)``
+- ``Redirection (<, >, >>) and redirection of stder (2>/dev/null)``
 - ``Environment variables (there are complex tests with these)``
 - ``Quotes, escaping quotes and escaping characters``
 - ``Leaks with Valgrind**``
@@ -28,7 +28,6 @@ int main(int argc, char **argv)
     // of reading line with a get_next_line or a read() on fd 0, you just have to get
     // the argv[2] (which contains the content) and execute it.
   // Your code...
-  return (0);
 }
 ```
 
