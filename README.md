@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 And all of your return messages from ``exit``, ``cd`` error, ``echo`` error should be print on ``STDERROR`` (on fd = 2).
 
 
-When you have added this part in your main, built-in ``echo`` should work for this test, let's try a :
+When you have added this part in your main, your minishell's built-in ``echo`` must work for this test, let's try a :
 ```bash
 bash test.sh compatibility
 ```
