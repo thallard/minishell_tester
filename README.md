@@ -8,6 +8,7 @@ The tester contains these features :
 - ``Quotes, escaping quotes and escaping characters``
 - ``Leaks with Valgrind**``
 - ``Print differences between your minishell results and bash ones with exit status ($?)``
+- ``Check dynamic environment variables ($_, $PWD, $OLDPWD, $SHLVL, etc...)``
 
 ** : For Valgrind check gurival's repo : https://github.com/grouville/valgrind_42, it's an useful tool to use Valgrind on your MacOS.
 <p align="center">Little peak of the tester :</p>
