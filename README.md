@@ -8,14 +8,17 @@ The tester contains these features :
 - ``Quotes, escaping quotes and escaping characters``
 - ``Leaks with Valgrind**``
 - ``Print differences between your minishell results and bash ones with exit status ($?)``
+- ``Check dynamic environment variables ($_, $PWD, $OLDPWD, $SHLVL, etc...)``
 
-** : For Valgrind check gurival's repo : https://github.com/grouville/valgrind_42, it's an useful tool to use Valgrind on your MacOS.
+** : For Valgrind check gurival's repository : https://github.com/grouville/valgrind_42, it's an useful tool to use Valgrind for MacOS.
 <p align="center">Little peak of the tester :</p>
 <p align="center">
   <img src="tmp/preview.gif" alt="animated" />
 </p>
 
 ## Get started (VERY IMPORTANT)
+Your minishell executable must work with ``-c`` flag like the real bash.
+
 First of all, you must have the below part in your main of your minishell, otherwise you won't be able to use the tester.
 If you don't understand this part or you're having some troubles, do not hesitate to contact me on Discord or Slack :
 ```cpp
@@ -33,6 +36,14 @@ int main(int argc, char **argv)
 }
 ```
 And all of your return messages from ``exit``, ``cd`` error, ``echo`` error should be print on ``STDERROR`` (on fd = 2).
+
+
+When you have added this part in your main, built-in ``echo`` should work for this test, let's try a :
+```bash
+bash test.sh compatibility
+```
+If you have this result then your minishell is working, you can use the tester !
+![](tmp/compatibility.png)
 ## Usage
 
 To show all explained flags and global usage of the script :
@@ -47,7 +58,11 @@ bash test.sh [--diff] [--fast] [--valgrind] <name_file> ...
 Some examples on how to use it :
 ```bash
 bash test.sh --diff all
+bash test.sh --diff echo 
+bash test.sh --fast echo cd
 bash test.sh --diff --fast echo export unset
+bash test.sh --diff --valgrind all
+
 ```
 
 ## Contact
