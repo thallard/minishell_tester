@@ -47,7 +47,11 @@ bash test.sh [--diff] [--fast] [--valgrind] <name_file> ...
 Some examples on how to use it :
 ```bash
 bash test.sh --diff all
+bash test.sh --diff echo 
+bash test.sh --fast echo cd
 bash test.sh --diff --fast echo export unset
+bash test.sh --diff --valgrind all
+
 ```
 
 ## Contact
