@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/03 17:38:16 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/02/04 11:58:09 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,9 @@ if [ "$1" == "help" ]; then
 	printf "    use ${YELLOW}\"bash test.sh all\"${BLANK} to run all commands test at the same time.\n\n"
     printf "    flag ${YELLOW}[--diff]${BLANK} allow when its enabled to see the difference(s) between your minishell results and real bash ones, without this flag enabled you will only see if the test is correct.\n"
 	printf "    flag ${YELLOW}[--fast] ${BLANK}or ${YELLOW}[-f] ${BLANK}allow to increase the delay between each test.\n"
-	printf "    flag ${YELLOW}[--valgrind] ${BLANK}or ${YELLOW}[-v] ${BLANK}enable leaks checking (Valgrind works only on Linux OS, check this to use it: https://github.com/grouville/valgrind_42.\n"
+	printf "    flag ${YELLOW}[--valgrind] ${BLANK}or ${YELLOW}[-v] ${BLANK}enable leaks checking (Valgrind works only on Linux OS, check this to use it: https://github.com/grouville/valgrind_42.\n\n"
+	printf "All files availables for tests :\n"
+	printf "${YELLOW}$(find file_tests -type f -name "*.txt" -exec basename {} .po \;)\n"
     exit
 fi
 
@@ -46,8 +48,8 @@ fi
 if [[ -f "$PATH_Makefile/Makefile" ]]; then
 	{
 		make all -C $PATH_Makefile
-	} > tmp/makefile
-	if [ -z "$(cat tmp/makefile | grep error)" ]; then
+	} > tmp/errors_makefile
+	if [ -z "$(cat tmp/errors_makefile | grep error)" ]; then
 		printf "${GREENB}Makefile successfully created, your executable minishell is ready.\n"
 	else 
 		printf "\033[1;31mError : Makefile can't compile, check above errors.\n"
@@ -85,7 +87,7 @@ if [ "$RUN" == "1" ]; then
 				if [ "$var" == "all" ]; then
 					FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
 					if [ -z "$(find file_tests -type f -name "*.txt" -print)" ]; then
-						printf "${REDB}Error, 0 files founded in ./file_tests with \"all\" tag.\n"
+						printf "${REDB}Error, 0 files founded in ./file_tests with \"all\" tag, be sure you don\'t have deleted ./file_tests content.\n"
 						exit
 					fi
 					ALL=1
@@ -93,7 +95,11 @@ if [ "$RUN" == "1" ]; then
 				else
 					FILE_TO_READ="$FILE_TO_READ $(find file_tests -name "$var?*" -print)"
 					if [ -z "$(find file_tests -name "$var?*" -print)" ]; then
-						printf "${REDB}Error, 0 files founded with \"${var}\" tag.\n"
+						printf "${REDB}Error, 0 files founded with \"${var}\" tag, use for example \"echo\" to run echo tests.\n\n"
+						printf "${BLANK}Below, there are the list of files available (in file_tests folder) :\n"
+						find file_tests -type f -name "*.txt" -exec basename {} .po \; | cut -d '.' -f1 | while read line; do
+							printf "${BLANK}-  ${YELLOW}$line\n"
+						done
 						exit
 					fi
 				fi
@@ -102,9 +108,9 @@ if [ "$RUN" == "1" ]; then
 	fi
 	# Added all files if 0 files name or "all" is specified
 	if [ "$ALL" == "0" ] && [ -z "$FILE_TO_READ" ]; then
-		FILE_TO_READ="$(find file_tests -type f -name "*.txt" -print)"
+		FILE_TO_READ="$(find file_tests -type f -name "*.txt")"
 		if [ -z "$(find file_tests -type f -name "*.txt" -print)" ]; then
-			printf "${REDB}Error, 0 files founded in ./file_tests with \"all\" tag.\n"
+			printf "${REDB}Error, 0 files founded in ./file_tests with \"all\" tag, be sure you don\'t have deleted ./file_tests content.\n"
 			exit
 		fi
 		ALL=1
@@ -135,15 +141,7 @@ if [ "$RUN" == "1" ]; then
 			BASH_RESULT=$(echo $line | bash 2>&-)
 			BASH_EXIT=$?
 			# Remove temp files if they exists
-			if [ -f tmp/file ]; then
-				rm -f tmp/file
-			fi
-			if [ -f tmp/file1 ]; then
-				rm -f tmp/file1
-			fi
-			if [ -f tmp/file2 ]; then
-				rm -f tmp/file2
-			fi
+			rm -f tmp/file tmp/file1 tmp/file2 2>/dev/null
 			MINISHELL_RESULT=$(echo $line | $VALGRIND ./minishell 2>&-)
 			MINISHELL_EXIT=$?
 			if [ "$DIFF_FLAGS" == "1" ]; then
@@ -176,4 +174,4 @@ if [ "$RUN" == "1" ]; then
 		printf "$(cat tofix/tofix_tests.txt | wc -l | xargs) wrong tests were added in \"${YELLOW}./tofix/tofix_tests.txt${GREEN}\".\n"
 		rm -rf tmp/tmp
 fi
-rm -f a bar file tmp/file1 tmp/file2 foo je lol ls suis 'test' teststicked testyosticked
+rm -f tmp/file1 tmp/file2 tmp/errors_makefile
