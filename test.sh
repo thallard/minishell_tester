@@ -6,10 +6,11 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/04 11:58:09 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/02/04 12:56:56 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
+# Colors variables
 GREEN='\033[0;32m'
 GREENB='\033[1;32m'
 RED='\033[0;31m'
@@ -77,7 +78,18 @@ if [ "$RUN" == "1" ]; then
 	else
 		for var in "$@"
 		do
-			if [ "$var" == "--diff" ]; then
+			if [ "$var" == "compatibility" ]; then
+				BASH_RESULT=$(echo "echo It\'s working!" | bash)
+				MINISHELL_RESULT=$(echo "echo It\'s working!" | ./minishell)
+				if [ "$BASH_RESULT" ==  "$MINISHELL_RESULT" ]; then
+					printf "${GREEN}$MINISHELL_RESULT\n"
+					printf "The tester and your minishell is now working together, good job ! You can start use standard commands right now.\n"
+				else
+					printf "${RED}The tester is not working with your minishell, check the \"Get Started\" part of the repository : https://github.com/thallard/minishell_tester.\n"
+				fi 
+				RUN=0
+				break
+			elif [ "$var" == "--diff" ]; then
 				DIFF_FLAGS=1
 			elif [ "$var" == "--fast" ] || [ "$var" == "-f" ]; then
 				SPEED=0.001
@@ -123,55 +135,58 @@ if [ "$RUN" == "1" ]; then
 	echo -n > tofix/tofix_tests.txt
 	echo -n > tmp/tmp
 	# Main process checking each line and compare minishell executable + bash results
-	cat $FILE_TO_READ | while read line
-		do
-			if [ "$line" == "\n" ]; then
-				continue
-			elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ] && [ "$SPEED" == "0.09" ]; then
-				printf "\n${GREENB}${line}\n"
-				echo $line >> tmp/tmp
-				sleep 1
-				continue 
-			elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ] && [ "$SPEED" == "0.001" ]; then
-				printf "\n${GREENB}${line}\n"
-				echo $line >> tmp/tmp
-				continue 
-			fi
-			# If Valgrind flags is enabled, run tests with valgrind
-			BASH_RESULT=$(echo $line | bash 2>&-)
-			BASH_EXIT=$?
-			# Remove temp files if they exists
-			rm -f tmp/file tmp/file1 tmp/file2 2>/dev/null
-			MINISHELL_RESULT=$(echo $line | $VALGRIND ./minishell 2>&-)
-			MINISHELL_EXIT=$?
-			if [ "$DIFF_FLAGS" == "1" ]; then
-				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
-						printf "${GREEN}$i: $line\n"
-						echo $line >> tmp/tmp
-				else
-					if [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
-						printf "${RED}$i:        [$line]\nbash     : [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
-						echo $line >> tofix/tofix_tests.txt
+	if [ "$RUN" == "1" ]; then
+		cat $FILE_TO_READ | while read line
+			do
+				if [ "$line" == "\n" ]; then
+					continue
+				elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ] && [ "$SPEED" == "0.09" ]; then
+					printf "\n${GREENB}${line}\n"
+					echo $line >> tmp/tmp
+					sleep 1
+					continue 
+				elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ] && [ "$SPEED" == "0.001" ]; then
+					printf "\n${GREENB}${line}\n"
+					echo $line >> tmp/tmp
+					continue 
+				fi
+				# If Valgrind flags is enabled, run tests with valgrind
+				BASH_RESULT=$(echo $line | bash 2>&-)
+				BASH_EXIT=$?
+				# Remove temp files if they exists
+				rm -f tmp/file tmp/file1 tmp/file2 2>/dev/null
+				MINISHELL_RESULT=$(echo $line | $VALGRIND ./minishell 2>&-)
+				MINISHELL_EXIT=$?
+				if [ "$DIFF_FLAGS" == "1" ]; then
+					if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
+							printf "${GREEN}$i: $line\n"
+							echo $line >> tmp/tmp
 					else
-						printf "${RED}$i:        [$line]\nbash     : [$BASH_RESULT][$BASH_EXIT]\nminishell: [$MINISHELL_RESULT][$MINISHELL_EXIT]\n"
+						if [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
+							printf "${RED}$i:        [$line]\nbash     : [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
+							echo $line >> tofix/tofix_tests.txt
+						else
+							printf "${RED}$i:        [$line]\nbash     : [$BASH_RESULT][$BASH_EXIT]\nminishell: [$MINISHELL_RESULT][$MINISHELL_EXIT]\n"
+							echo $line >> tofix/tofix_tests.txt
+						fi
+					fi
+				else
+					if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
+						printf "${GREEN}$i: [$line]\n"
+						echo $line >> tmp/tmp
+					else
+						printf "${RED}$i: [$line]\n"
 						echo $line >> tofix/tofix_tests.txt
 					fi
 				fi
-			else
-				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
-					printf "${GREEN}$i: [$line]\n"
-					echo $line >> tmp/tmp
-				else
-					printf "${RED}$i: [$line]\n"
-					echo $line >> tofix/tofix_tests.txt
-				fi
-			fi
-			i=$((i + 1))
-			sleep $SPEED
+				i=$((i + 1))
+				sleep $SPEED
+			
+			done
 		
-		done
 		printf "\n${GREEN}Conclusion : $(cat tmp/tmp | wc -l | xargs)/$(cat $FILE_TO_READ | wc -l | xargs) tests passed.\n"
 		printf "$(cat tofix/tofix_tests.txt | wc -l | xargs) wrong tests were added in \"${YELLOW}./tofix/tofix_tests.txt${GREEN}\".\n"
 		rm -rf tmp/tmp
+		fi
 fi
 rm -f tmp/file1 tmp/file2 tmp/errors_makefile
