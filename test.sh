@@ -6,7 +6,7 @@
 #    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/04 12:56:56 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/02/08 15:23:09 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,7 @@ if [ "$RUN" == "1" ]; then
 	else
 		for var in "$@"
 		do
+			# Compatibility part
 			if [ "$var" == "compatibility" ]; then
 				BASH_RESULT=$(echo "echo It\'s working!" | bash)
 				MINISHELL_RESULT=$(echo "echo It\'s working!" | ./minishell)
@@ -86,6 +87,8 @@ if [ "$RUN" == "1" ]; then
 					printf "The tester and your minishell is now working together, good job ! You can start use standard commands right now.\n"
 				else
 					printf "${RED}The tester is not working with your minishell, check the \"Get Started\" part of the repository : https://github.com/thallard/minishell_tester.\n"
+					printf "Your result     : [${MINISHELL_RESULT}] and exit status : $MINISHELL_RESULT\n"
+					printf "Expected result : [${BASH_RESULT}] and exit status : $BASH_RESULT\n"
 				fi 
 				RUN=0
 				break
