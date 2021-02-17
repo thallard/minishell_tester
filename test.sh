@@ -28,6 +28,7 @@ i=1
 FILE_TO_READ=
 RUN=1
 DIFF_FLAGS=0
+SHORT=0
 ALL=0
 SPEED=0.09
 VALGRIND=
@@ -94,6 +95,8 @@ if [ "$RUN" == "1" ]; then
 				break
 			elif [ "$var" == "--diff" ]; then
 				DIFF_FLAGS=1
+			elif [ "$var" == "--short" ] || [ "$var" == "-s" ]; then
+				SHORT=1
 			elif [ "$var" == "--fast" ] || [ "$var" == "-f" ]; then
 				SPEED=0.001
 			elif [ "$var" == "--valgrind" ] || [ "$var" == "-v" ]; then
@@ -162,7 +165,10 @@ if [ "$RUN" == "1" ]; then
 				MINISHELL_EXIT=$?
 				if [ "$DIFF_FLAGS" == "1" ]; then
 					if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
-							printf "${GREEN}$i: $line\n"
+							if [ "$SHORT" == "1" ]; then
+								printf "\033[?25l\033[J${GREEN}$i: $line\033[0m\r"
+							else
+								printf "${GREEN}$i: $line\n"
 							echo $line >> tmp/tmp
 					else
 						if [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
@@ -175,7 +181,10 @@ if [ "$RUN" == "1" ]; then
 					fi
 				else
 					if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
-						printf "${GREEN}$i: [$line]\n"
+						if [ "$SHORT" == "1" ]; then
+							printf "\033[?25l\033[J${GREEN}$i: $line\033[0m\r"
+						else
+							printf "${GREEN}$i: $line\n"
 						echo $line >> tmp/tmp
 					else
 						printf "${RED}$i: [$line]\n"
