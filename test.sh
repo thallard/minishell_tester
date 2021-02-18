@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    test.sh                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/08 15:23:09 by thallard         ###   ########lyon.fr    #
+#    Updated: 2021/02/18 09:53:22 by thjacque         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -148,12 +148,10 @@ if [ "$RUN" == "1" ]; then
 					continue
 				elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ] && [ "$SPEED" == "0.09" ]; then
 					printf "\n${GREENB}${line}\n"
-					echo $line >> tmp/tmp
 					sleep 1
 					continue 
 				elif [ "$(printf '%s' "$line" | cut -c1)" == "-" ] && [ "$SPEED" == "0.001" ]; then
 					printf "\n${GREENB}${line}\n"
-					echo $line >> tmp/tmp
 					continue 
 				fi
 				# If Valgrind flags is enabled, run tests with valgrind
@@ -169,7 +167,8 @@ if [ "$RUN" == "1" ]; then
 								printf "\033[?25l\033[J${GREEN}$i: $line\033[0m\r"
 							else
 								printf "${GREEN}$i: $line\n"
-							echo $line >> tmp/tmp
+							fi
+							echo $line >> tmp/valid
 					else
 						if [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
 							printf "${RED}$i:        [$line]\nbash     : [$BASH_RESULT]${GREEN}[$BASH_EXIT]${RED}\nminishell: [$MINISHELL_RESULT]${GREEN}[$MINISHELL_EXIT]\n"
@@ -185,20 +184,22 @@ if [ "$RUN" == "1" ]; then
 							printf "\033[?25l\033[J${GREEN}$i: $line\033[0m\r"
 						else
 							printf "${GREEN}$i: $line\n"
-						echo $line >> tmp/tmp
+						fi
+						echo $line >> tmp/valid
 					else
 						printf "${RED}$i: [$line]\n"
 						echo $line >> tofix/tofix_tests.txt
 					fi
 				fi
 				i=$((i + 1))
+				echo $i >> tmp/total
 				sleep $SPEED
 			
 			done
 		
-		printf "\n${GREEN}Conclusion : $(cat tmp/tmp | wc -l | xargs)/$(cat $FILE_TO_READ | wc -l | xargs) tests passed.\n"
+		printf "\n${GREEN}Conclusion : $(cat tmp/valid | wc -l | xargs)/$(cat tmp/total | wc -l | xargs) tests passed.\n"
 		printf "$(cat tofix/tofix_tests.txt | wc -l | xargs) wrong tests were added in \"${YELLOW}./tofix/tofix_tests.txt${GREEN}\".\n"
-		rm -rf tmp/tmp
+		rm -rf tmp/valid tmp/total
 		fi
 fi
 rm -f tmp/file1 tmp/file2 tmp/errors_makefile
