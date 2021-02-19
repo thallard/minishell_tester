@@ -15,6 +15,10 @@ The tester contains these features :
 <p align="center">
   <img src="tmp/preview.gif" alt="animated" />
 </p>
+<p align="center">And with the short flag :</p>
+<p align="center">
+    <img src="https://i.gyazo.com/329fd26a0abc17e26f308aaa77a1d78f.gif" alt="animated" />
+</p>
 
 ## Get started (VERY IMPORTANT)
 Your minishell executable must work with ``-c`` flag like the real bash.
@@ -50,10 +54,10 @@ To show all explained flags and global usage of the script :
 ```bash
 bash test.sh help 
 ```
-![](tmp/help.png)
+![](https://i.gyazo.com/8a8633c2e7ea7ebf9370f156eda45ab7.png)
 Global use of the tester (To see utility of each flags check the screenshot above) :
 ```bash
-bash test.sh [--diff] [--fast] [--valgrind] <name_file> ...
+bash test.sh [--diff] [--fast] [--short] [--valgrind] <name_file> ...
 ```
 Some examples on how to use it :
 ```bash
@@ -62,6 +66,7 @@ bash test.sh --diff echo
 bash test.sh --fast echo cd
 bash test.sh --diff --fast echo export unset
 bash test.sh --diff --valgrind all
+bash test.sh -f -s -d all
 
 ```
 
