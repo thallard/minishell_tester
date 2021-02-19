@@ -6,7 +6,7 @@
 #    By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/18 09:53:22 by thjacque         ###   ########lyon.fr    #
+#    Updated: 2021/02/19 11:04:41 by thjacque         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,10 +36,11 @@ VALGRIND=
 # Check if 0 arguments is set 
 if [ "$1" == "help" ]; then
     printf "How to use this tester ?\n"
-    printf "    use ${YELLOW}\"bash test.sh [--diff] [--fast] [--valgrind] <name_file> ...\"${BLANK} to run a specific built-in command test (echo, unset, export, etc...).\n"
+    printf "    use ${YELLOW}\"bash test.sh [--diff] [--fast] [--short] [--valgrind] <name_file> ...\"${BLANK} to run a specific built-in command test (echo, unset, export, etc...).\n"
 	printf "    use ${YELLOW}\"bash test.sh all\"${BLANK} to run all commands test at the same time.\n\n"
-    printf "    flag ${YELLOW}[--diff]${BLANK} allow when its enabled to see the difference(s) between your minishell results and real bash ones, without this flag enabled you will only see if the test is correct.\n"
+    printf "    flag ${YELLOW}[--diff]${BLANK}or ${YELLOW}[-d] allow when its enabled to see the difference(s) between your minishell results and real bash ones, without this flag enabled you will only see if the test is correct.\n"
 	printf "    flag ${YELLOW}[--fast] ${BLANK}or ${YELLOW}[-f] ${BLANK}allow to increase the delay between each test.\n"
+	printf "    flag ${YELLOW}[--short] ${BLANK}or ${YELLOW}[-s] ${BLANK}make all valids tests on one line.\n"
 	printf "    flag ${YELLOW}[--valgrind] ${BLANK}or ${YELLOW}[-v] ${BLANK}enable leaks checking (Valgrind works only on Linux OS, check this to use it: https://github.com/grouville/valgrind_42.\n\n"
 	printf "All files availables for tests :\n"
 	printf "${YELLOW}$(find file_tests -type f -name "*.txt" -exec basename {} .po \;)\n"
@@ -93,7 +94,7 @@ if [ "$RUN" == "1" ]; then
 				fi 
 				RUN=0
 				break
-			elif [ "$var" == "--diff" ]; then
+			elif [ "$var" == "--diff" ] || [ "$var" == "-d" ]; then
 				DIFF_FLAGS=1
 			elif [ "$var" == "--short" ] || [ "$var" == "-s" ]; then
 				SHORT=1
