@@ -5,6 +5,10 @@ echo oui | cat -e
 echo oui | echo non | echo something | grep oui
 echo oui | echo non | echo something | grep non
 echo oui | echo non | echo something | grep something
+pwd ; cd .. | echo "something"
+pwd ; cd .. | echo "something" ; pwd
+pwd ; cd / | echo "something" ; pwd
+cd .. | pwd
 ifconfig | grep ":"
 ifconfig | grep nothing
 whoami | grep $USER
