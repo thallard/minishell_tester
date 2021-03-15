@@ -5,6 +5,9 @@ unset doesntexist
 unset PWD
 unset PWD ; echo $PWD
 unset OLDPWD ; echo $PWD
+unset PATH ; ls
+unset PATH ; echo "something"
+unset PATH ; bash
 unset TES\\\\T
 unset TES;T
 unset TES.T
