@@ -59,6 +59,11 @@ export TES^T=123
 export TES!T=123
 export TES\~T=123
 export TEST+=100 ; echo $TEST ; export TEST+=200 ; echo $TEST
+export TEST=$USER ; echo $TEST ; export TEST+=$PWD ; echo $TEST
+export TEST=$USER ; echo $TEST ; export TEST+=$PWD ; echo $TEST ; cd $TEST
+export TEST=$USER ; echo $TEST ; unset PWD ; export TEST+=$PWD ; echo $TEST
+export TEST=$USER ; echo $TEST ; export TEST+=$PWD ; echo $TEST ; cd $TEST
+export TEST=$USER ; echo $TEST ; unset PWD ; export TEST+=$PWD ; echo $TEST ; cd $TEST ; echo $PWD
 export TEST=123 0$TEST=0123 ; echo $TEST
 export TEST ; env | grep "TEST" ; unset TEST
 export TEST= ; env | grep "TEST" ; unset TEST
