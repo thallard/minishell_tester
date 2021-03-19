@@ -21,7 +21,7 @@ The tester contains these features :
 </p>
 
 ## Get started (VERY IMPORTANT)
-Your minishell executable must work with argv[2].
+Your minishell executable must work with ``argv[2]``.
 
 First of all, you must have the below part in your main of your minishell, otherwise you won't be able to use the tester.
 If you don't understand this part or you're having some troubles, do not hesitate to contact me on Discord or Slack :
