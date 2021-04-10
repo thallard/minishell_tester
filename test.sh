@@ -86,7 +86,7 @@ if [ "$RUN" == "1" ]; then
 				BASH_EXIT=$?
 				MINISHELL_RESULT=$(echo "echo It\'s working!" | ./minishell)
 				MINISHELL_EXIT=$?
-				iif [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
+				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
 					printf "${GREEN}$MINISHELL_RESULT\n"
 					printf "The tester and your minishell is now working together, good job ! You can start use standard commands right now.\n"
 				else
