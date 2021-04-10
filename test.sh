@@ -83,14 +83,16 @@ if [ "$RUN" == "1" ]; then
 			# Compatibility part
 			if [ "$var" == "compatibility" ]; then
 				BASH_RESULT=$(echo "echo It\'s working!" | bash)
+				BASH_EXIT=$?
 				MINISHELL_RESULT=$(echo "echo It\'s working!" | ./minishell)
-				if [ "$BASH_RESULT" ==  "$MINISHELL_RESULT" ]; then
+				MINISHELL_EXIT=$?
+				iif [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
 					printf "${GREEN}$MINISHELL_RESULT\n"
 					printf "The tester and your minishell is now working together, good job ! You can start use standard commands right now.\n"
 				else
 					printf "${RED}The tester is not working with your minishell, check the \"Get Started\" part of the repository : https://github.com/thallard/minishell_tester.\n"
-					printf "Your result     : [${MINISHELL_RESULT}] and exit status : $MINISHELL_RESULT\n"
-					printf "Expected result : [${BASH_RESULT}] and exit status : $BASH_RESULT\n"
+					printf "Your result     : [${MINISHELL_RESULT}] and exit status : $MINISHELL_EXIT\n"
+					printf "Expected result : [${BASH_RESULT}] and exit status : $BASH_EXIT\n"
 				fi 
 				RUN=0
 				break
