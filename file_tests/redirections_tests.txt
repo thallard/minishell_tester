@@ -31,7 +31,6 @@ echo something > tmp/file ; cd doesntexist 2>/dev/null ; cat tmp/file
 cd doesntexist 2>/dev/null
 cat doesntexist 2>/dev/null
 cat doesntexist test.sh 2>tmp/errors 1>tmp/file ; cat tmp/errors tmp/file
-cat doesntexist 2 > tmp/errors 1>tmp/file ; cat tmp/errors tmp/file
 cat doesntexist 2> tmp/errors 1>tmp/file ; cat tmp/errors tmp/file
 cat doesntexist 2>/errors 1>tmp/file ; cat /errors tmp/file ; rm -f /errors
 cat doesntexist 2>tmp/errors 1>tmp/file 2>tmp/errors2 ; cat tmp/errors tmp/file tmp/errors2
