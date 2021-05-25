@@ -32,7 +32,7 @@ EechoE
 >>echo>>
 ;echo;
 |echo|
-echo -n |
+echo -n
 echo -n ;
 echo ;
 echo something ;
