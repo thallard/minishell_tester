@@ -82,9 +82,9 @@ if [ "$RUN" == "1" ]; then
 		do
 			# Compatibility part
 			if [ "$var" == "compatibility" ]; then
-				BASH_RESULT=$(echo "echo It\'s working!" | bash)
+				BASH_RESULT=$(echo "echo Its working!" | bash)
 				BASH_EXIT=$?
-				MINISHELL_RESULT=$(echo "echo It\'s working!" | ./minishell)
+				MINISHELL_RESULT=$(echo "echo Its working!" | ./minishell)
 				MINISHELL_EXIT=$?
 				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
 					printf "${GREEN}$MINISHELL_RESULT\n"
