@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    test.sh                                            :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thjacque <thjacque@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: thallard <thallard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/13 20:16:23 by thallard          #+#    #+#              #
-#    Updated: 2021/02/19 11:04:41 by thjacque         ###   ########lyon.fr    #
+#    Updated: 2021/06/23 14:47:54 by thallard         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,9 +82,9 @@ if [ "$RUN" == "1" ]; then
 		do
 			# Compatibility part
 			if [ "$var" == "compatibility" ]; then
-				BASH_RESULT=$(echo "echo Its working!" | bash)
+				BASH_RESULT=$(bash -c "echo Its working!")
 				BASH_EXIT=$?
-				MINISHELL_RESULT=$(echo "echo Its working!" | ./minishell)
+				MINISHELL_RESULT=$(./minishell -c "echo Its working!")
 				MINISHELL_EXIT=$?
 				if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then
 					printf "${GREEN}$MINISHELL_RESULT\n"
@@ -158,11 +158,11 @@ if [ "$RUN" == "1" ]; then
 					continue 
 				fi
 				# If Valgrind flags is enabled, run tests with valgrind
-				BASH_RESULT=$(echo $line | bash 2>&-)
+				BASH_RESULT=$(bash -c "$line")
 				BASH_EXIT=$?
 				# Remove temp files if they exists
 				rm -f tmp/file tmp/file1 tmp/file2 2>/dev/null
-				MINISHELL_RESULT=$(echo $line | $VALGRIND ./minishell 2>&-)
+				MINISHELL_RESULT=$($VALGRIND ./minishell -c "$line")
 				MINISHELL_EXIT=$?
 				if [ "$DIFF_FLAGS" == "1" ]; then
 					if [ "$BASH_RESULT" == "$MINISHELL_RESULT" ] && [ "$BASH_EXIT" == "$MINISHELL_EXIT" ]; then

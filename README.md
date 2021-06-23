@@ -21,21 +21,24 @@ The tester contains these features :
 </p>
 
 ## Get started (VERY IMPORTANT)
-Your minishell executable must work with ``argv[2]``.
+Your minishell executable must work with ``-c`` flag.
 
 First of all, you must have the below part in your main of your minishell, otherwise you won't be able to use the tester.
 If you don't understand this part or you're having some troubles, do not hesitate to contact me on Discord or Slack :
 ```cpp
-// argv[2] will contains the content of the line for example "echo bonjour ; ls -la" 
+// argv[2] will contains the content of the line for example "echo something ; ls -la" 
 int main(int argc, char **argv)
 {
   // Your code...
-  if (argc >= 2)
+  if (argc >= 2 && !ft_strncmp(argv[1], "-c", 3))
+  {
     ft_launch_minishell(argv[2]);
+    exit(0);
+  }
     // Above this is the function that normally launch your minishell, instead 
     // of reading line with a get_next_line or a read() on fd 0, you just have to get
     // the argv[2] (which contains the content) and execute it.
-  // Your code...
+  // Your code ...
 }
 ```
 And all of your return messages from ``exit``, ``cd`` errors, ``echo`` errors should be print on ``STDERROR`` (on fd = 2).
