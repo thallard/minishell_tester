@@ -30,7 +30,7 @@ If you don't understand this part or you're having some troubles, do not hesitat
 int main(int argc, char **argv)
 {
   // Your code...
-  if (argc >= 2 && !ft_strncmp(argv[1], "-c", 3))
+  if (argc >= 3 && !ft_strncmp(argv[1], "-c", 3))
   {
     ft_launch_minishell(argv[2]);
     exit(0);
