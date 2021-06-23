@@ -32,12 +32,13 @@ int main(int argc, char **argv)
   // Your code...
   if (argc >= 3 && !ft_strncmp(argv[1], "-c", 3))
   {
-    ft_launch_minishell(argv[2]);
-    exit(0);
+    int exit_status = ft_launch_minishell(argv[2]);
+    exit(exit_status);
   }
     // Above this is the function that normally launch your minishell, instead 
     // of reading line with a get_next_line or a read() on fd 0, you just have to get
     // the argv[2] (which contains the content) and execute it.
+    // Your function should return the good exit status otherwise the tests may be considered as false.
   // Your code ...
 }
 ```
