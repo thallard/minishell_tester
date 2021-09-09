@@ -3,7 +3,7 @@ env | grep "_="
 export | grep "SHLVL"
 export | grep "OLDPWD"
 export | grep "PWD"
-export $? ; echo $?
+export $? 
 export TEST
 export TEST=
 export TEST=123

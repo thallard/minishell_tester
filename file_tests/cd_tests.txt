@@ -1,30 +1,28 @@
 - CD part : For next tests, you will need : \\\033[0;33mecho, pwd, unset, redirections (normal and stderror) and semicolons (;).
-cd ; pwd
-cd .. ; pwd
-cd . ; pwd
-cd /Users ; pwd
-cd ; pwd
-cd // ; pwd
-cd '//' ; pwd
-cd ////// ; pwd
-cd ./././ ; pwd
-pwd ; cd . ; pwd
-cd / ; cd Users ; pwd ; cd .. ; pwd
-cd '/////' 2>/dev/null ; pwd
-cd '/etc' ; pwd
-cd '/var' ; pwd
-cd "$PWD/file_tests" ; pwd
-cd "doesntexist" ; pwd
-cd "doesntexist" 2>/dev/null ; pwd
-cd ../../.. ; pwd ; echo $PWD $OLDPWD
-cd "wtf" 2>/dev/null ; pwd ; echo $PWD $OLDPWD
-cd .. ; unset OLDPWD ; cd $OLDPWD ; pwd 
-cd .. ; unset PWD ; cd $PWD ; pwd
+cd 
+cd .. 
+cd . 
+cd /Users 
+cd // 
+cd '//' 
+cd ////// 
+cd ./././ 
+cd /
+cd '/////' 2>/dev/null 
+cd '/etc' 
+cd '/var' 
+cd "$PWD/file_tests" 
+cd "doesntexist" 
+cd "doesntexist" 2>/dev/null 
+cd ../../..
+cd "wtf" 2>/dev/null 
+cd .. 
+cd ..
 cd ?
 cd +
 cd _
 cd woof
 cd bark bark
-cd '/' ; pwd
-cd $PWD/file_tests ; pwd
-cd $OLDPWD/something ; pwd
+cd '/' 
+cd $PWD/file_tests 
+cd $OLDPWD/something 

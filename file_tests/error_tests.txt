@@ -4,7 +4,6 @@ test
 echo > <
 echo | |
 <
-;
 |
 | | |
 hello world
@@ -29,7 +28,7 @@ EechoE
 >echo>
 <echo<
 >>echo>>
-;echo;
+echo
 |echo|
 echo -n
 echo -n
@@ -38,7 +37,7 @@ echo something
 rm -f something
 cat something
 | echo -n oui
-; echo -n oui
+echo -n oui
 trying to destroy your minishell
 trying something again echo if you see this message thats not a good new
 qewew
