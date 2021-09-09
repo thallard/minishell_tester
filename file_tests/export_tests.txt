@@ -4,11 +4,11 @@ export | grep "SHLVL"
 export | grep "OLDPWD"
 export | grep "PWD"
 export $? ; echo $?
-export TEST ; echo $TEST
-export TEST= ; echo $TEST
-export TEST=123 ; echo $TEST
-export ___TEST=123 ; echo $TEST
-export --TEST=123 ; echo $TEST
+export TEST
+export TEST=
+export TEST=123
+export ___TEST=123
+export --TEST=123
 export ""=""
 export ''=''
 export "="="="
@@ -19,7 +19,7 @@ export -TEST=100
 export TEST-=100
 export _TEST=100
 export | grep "SHLVL"
-export TEST ; env | grep "TEST"
+export TEST
 export ==========
 export 1TEST=
 export TEST
@@ -58,24 +58,4 @@ export sudo
 export TES^T=123
 export TES!T=123
 export TES\~T=123
-export TEST+=100 ; echo $TEST ; export TEST+=200 ; echo $TEST
-export TEST=$USER ; echo $TEST ; export TEST+=$PWD ; echo $TEST
-export TEST=$USER ; echo $TEST ; export TEST+=$PWD ; echo $TEST ; cd $TEST
-export TEST=$USER ; echo $TEST ; unset PWD ; export TEST+=$PWD ; echo $TEST
-export TEST=$USER ; echo $TEST ; export TEST+=$PWD ; echo $TEST ; cd $TEST
-export TEST=$USER ; echo $TEST ; unset PWD ; export TEST+=$PWD ; echo $TEST ; cd $TEST ; echo $PWD
-export TEST=123 0$TEST=0123 ; echo $TEST
-export TEST ; env | grep "TEST" ; unset TEST
-export TEST= ; env | grep "TEST" ; unset TEST
-export TEST="" ; env | grep "TEST" ; unset TEST
-export TEST='' ; env | grep "TEST" ; unset TEST
-export TEST=100 TEST2=100 ; env | grep "TEST" ; unset TEST TEST2
-export TEST=100 TEST1=200 ; env | grep "TEST" ; unset TEST TEST1
-export TEST="100" ; env | grep "TEST" ; unset TEST
-export TEST='"$USER"' ; env | grep "TEST" ; unset TEST
-export TEST="$USER" ; env | grep "TEST" ; unset TEST
-export TEST="$USER$USER" ; env | grep "TEST" ; unset TEST
-export TEST="'$USER'""test" ; env | grep "TEST" ; unset TEST
-export TEST="$USER" TEST1=$TEST ; env | grep "TEST" ; unset TEST
-export TEST=LOL ; export TEST+=LOL ; env | grep "TEST" ; unset TEST
-export TEST=LOL ; export TEST-=LOL ; env | grep "TEST" ; unset TEST
+export TEST+=100

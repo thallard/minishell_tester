@@ -32,22 +32,22 @@ exit -4
 exit wrong
 exit wrong_command 
 exit something
-exit 1 ; echo if you see this message then your minishell have some troubles
-exit -1 ; echo if you see this message then your minishell have some troubles
-exit 42 ; echo if you see this message then your minishell have some troubles
-exit 0 ; echo if you see this message then your minishell have some troubles
-exit --000 ; echo if you see this message then your minishell have some troubles
-exit +++++++000 ; echo if you see this message then your minishell have some troubles
-exit ++++3193912939 ; echo if you see this message then your minishell have some troubles
-exit ---31232103012 ; echo if you see this message then your minishell have some troubles
-exit "something" ; echo if you see this message then your minishell have some troubles
-exit q ; echo if you see this message then your minishell have some troubles
-exit help ; echo if you see this message then your minishell have some troubles
-exit export ; echo if you see this message then your minishell have some troubles
-exit echo ; echo if you see this message then your minishell have some troubles
-exit cd .. ; echo if you see this message then your minishell have some troubles
-exit 0 0 ; echo if you see this message then your minishell have some troubles
-exit something somethingv2 ; echo if you see this message then your minishell have some troubles
-exit 42 42 42 42 42 ; echo if you see this message then your minishell have some troubles
-exit echo something ; echo if you see this message then your minishell have some troubles
-exit exit ; echo if you see this message then your minishell have some troubles
+exit 1 
+exit -1 
+exit 42 
+exit 0 
+exit --000 
+exit +++++++000 
+exit ++++3193912939 
+exit ---31232103012 
+exit "something" 
+exit q 
+exit help 
+exit export 
+exit echo 
+exit cd .. 
+exit 0 0 
+exit something somethingv2 
+exit 42 42 42 42 42 
+exit echo something 
+exit exit 

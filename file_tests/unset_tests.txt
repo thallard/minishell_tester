@@ -1,13 +1,13 @@
 - Unset part : For next tests, you will need : \\\033[0;33m export, echo, cd, execve and semicolons (;).
 unset
-export TEST=100 ; echo $TEST ; unset TEST
+export TEST=100
 unset doesntexist
 unset PWD
-unset PWD ; echo $PWD
-unset OLDPWD ; echo $PWD
-unset PATH ; ls
-unset PATH ; echo "something"
-unset PATH ; bash
+unset PWD 
+unset OLDPWD 
+unset PATH 
+unset PATH 
+unset PATH 
 unset TES\\\\T
 unset TES;T
 unset TES.T

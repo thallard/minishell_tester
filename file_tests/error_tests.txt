@@ -1,5 +1,5 @@
 - Errors part : For next tests, you will need : \\\033[0;33mall built-in, redirections (normal and stderror) and semicolons (;).
-;; test
+test
 | test
 echo > <
 echo | |
@@ -7,7 +7,6 @@ echo | |
 ;
 |
 | | |
-;;;;;;;
 hello world
 ||||||||
             
@@ -33,14 +32,14 @@ EechoE
 ;echo;
 |echo|
 echo -n
-echo -n ;
-echo ;
-echo something ;
+echo -n
+echo
+echo something
 rm -f something
 cat something
 | echo -n oui
 ; echo -n oui
-trying to destroy your minishell ; echo hello
+trying to destroy your minishell
 trying something again echo if you see this message thats not a good new
 qewew
 wtf

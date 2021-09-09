@@ -23,7 +23,7 @@ echo test | cat -e | cat -e | cat -e
 whereis ls | cat -e | cat -e > test
 echo test | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
 ls -la | grep "."
-whereis grep > tmp/file ; cat tmp/file ; ls -la tmp/file | grep "grep"
-whereis grep > tmp/file ; cat tmp/file ; ls -la tmp/file
-ls -la > tmp/file ; cat < tmp/file tmp/doesntexist 2>/dev/null
-ls -la > tmp/file ; cat < tmp/file tmp/doesntexist
+whereis grep > tmp/file 
+whereis grep > tmp/file
+ls -la > tmp/file
+ls -la > tmp/file 
