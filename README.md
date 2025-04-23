@@ -1,5 +1,4 @@
-
-Tester for 42 minishell tester through complexes tests.
+Tester for the 42 Minishell project, designed to run complex and comprehensive tests.
 
 ## Overview
 The tester contains these features :
