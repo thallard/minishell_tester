@@ -3,6 +3,14 @@ Tester for 42 minishell tester through complexes tests.
 
 ## Overview
 
+<p align="center">Little peak of the tester :</p>
+<p align="center">
+  <img src="tmp/preview.gif" alt="animated" />
+</p>
+<p align="center">And with the short flag :</p>
+<p align="center">
+    <img src="https://i.gyazo.com/329fd26a0abc17e26f308aaa77a1d78f.gif" alt="animated" />
+</p>
 
 The tester contains these features :
 - ``Built-in (echo, export, cd, unset, pwd & exit)``
@@ -15,14 +23,7 @@ The tester contains these features :
 - ``Check dynamic environment variables ($_, $PWD, $OLDPWD, $SHLVL, etc...)``
 
 ** : For Valgrind check gurival's repository : https://github.com/grouville/valgrind_42, it's an useful tool to use Valgrind for MacOS.
-<p align="center">Little peak of the tester :</p>
-<p align="center">
-  <img src="tmp/preview.gif" alt="animated" />
-</p>
-<p align="center">And with the short flag :</p>
-<p align="center">
-    <img src="https://i.gyazo.com/329fd26a0abc17e26f308aaa77a1d78f.gif" alt="animated" />
-</p>
+
 
 ## Get started (VERY IMPORTANT)
 Your minishell executable must work with ``-c`` flag.
